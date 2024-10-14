@@ -1,4 +1,10 @@
-<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!--
+Copyright (C) 2020 - 2024 Siemens AG
+Copyright (C) 2020-2024 Siemens AG
+Copyright (C) Siemens AG 2021. All Rights Reserved.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Model Conversions
 

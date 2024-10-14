@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to write components for earlier versions (<1.2) of the AI Inference Server
 
 AI Inference Server versions up to 1.1 require the entrypoint to define a function named `run()` instead of `process_input()`. Not only is the function name different, but the component inputs and outputs are passed differently too.

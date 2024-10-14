@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to setup Windows to run AI SDK
 
 ## Prerequisites

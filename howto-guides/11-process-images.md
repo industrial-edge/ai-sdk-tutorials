@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to process images
 
 The preferred solution to receive images in your Inference Pipeline is to have an installed [Vision Connector](https://support.industry.siemens.com/cs/document/109963116/vision-connector?dti=0&lc=en-WW) and connected to cameras. Then the `Vision Connector` is capable to receive images from the cameras and provides them in 'ImageSet' format for AI Inference Server. This way the images can be received together with its metadata and in a standardized format.

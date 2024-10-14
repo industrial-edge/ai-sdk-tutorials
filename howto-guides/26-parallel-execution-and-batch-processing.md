@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # Parallel Execution and Batch Processing
 
 AI Inference Server provides various options to optimize data processing for Machine Learning Models, particularly when the Pipeline consists of multiple steps. In some cases, one step may execute faster than another, in which case it may be beneficial to run multiple instances of the slower step in parallel or processing batch of data instead of single ones. This can significantly improve the overall performance of the pipeline.

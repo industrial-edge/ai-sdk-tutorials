@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # Howto guides
 
  These guides take you through the steps required to solve real-world problems.

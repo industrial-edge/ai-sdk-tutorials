@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
 
 ### Using Databus connection with type `String`
 

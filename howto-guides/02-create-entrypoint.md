@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to create the entrypoint
 
 AI Inference Server itself receives the data payload from the input data connection. With each input, the AI Inference Server triggers the `process_input(data: dict) -> dict` function in the entrypoint module. After `process_input()` returns, the server forwards the output to the next pipeline component, or emits it as pipeline output over the output data connection.

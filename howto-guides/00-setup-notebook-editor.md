@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to setup up a notebook editor
 
 There are many notebook editor and executor software. This guide shows how to set up two of them: Jupyter Lab and Visual Studio Code.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to package models into an inference pipeline
 
 ​The AI SDK provides the functionality to create an edge configuration package that wraps trained models. These models can be converted to

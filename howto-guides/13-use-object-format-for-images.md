@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to use `Object` format for images
 
 Instead of sending image data over MQTT as a `String`, you can use ZMQ to feed the running pipeline with images using the `Object` format.

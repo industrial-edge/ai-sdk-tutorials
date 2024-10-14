@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to test edge configuration package locally
 
 ​Once you have created your pipeline configuration, you can export it as an Edge configuration package and deploy it directly to the AI Inference Server.

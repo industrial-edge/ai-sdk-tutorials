@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to test pipelines on an Edge Device
 
 In this howto you learn how to test the edge configuration packages from AI SDK Tutorials on a real Industrial Edge device.<br/>

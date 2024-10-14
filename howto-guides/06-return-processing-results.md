@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to return the processing results
 
 If you want to return the results after processing the input data, you must return them in a dictionary. The keys should be the variable names of the component's outputs. In the [handling file resources](05-handle-file-resources.md) howto guide, the `process_data()` function returns a such dictionary.\

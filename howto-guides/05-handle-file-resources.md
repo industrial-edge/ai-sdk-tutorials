@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to handle file resources
 
 File resources can be of any file type required to execute the Python code, including the Python sources themselves, such as configuration files, static data, or trained AI models stored

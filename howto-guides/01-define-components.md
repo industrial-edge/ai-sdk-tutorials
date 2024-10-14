@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to define PythonComponents
 
 In this context, 'component' in general, and `PythonComponent` in particular refers to a pipeline step that consumes input data, processes that data by using a model, and produces the output data, all while running on CPU on AI Inference Server.\

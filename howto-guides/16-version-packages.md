@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to version packages and how to use Package ID
 
 Edge packages are identified by their package ID and version attributes, and are grouped by package ID in [AI Inference Server](https://support.industry.siemens.com/cs/document/109825687/industrial-ai-ai-inference-server?dti=0&lc=en-US) and in other Edge applications.

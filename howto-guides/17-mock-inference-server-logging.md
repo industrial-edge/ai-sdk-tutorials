@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to mock AI Inference Server logger locally
 
 The Python environment on AI Inference Server injects a Python module named `log_module`, which the Python scripts can use for logging on the

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to use persistent storage on AI Inference Server
 
 AI Inference Server (v1.6.0+) allows the use of persistent storage.

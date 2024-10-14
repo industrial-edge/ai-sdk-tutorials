@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # Setting up the work environment
 
 This guide we'll walk you through a series of steps of installing and setting up the necessary software for running the notebooks in the project templates. For Windows we recommend using the WSL2 feature, which creates a virtual Linux environment. Having this, the rest of the steps are identical to setting up the work environment on a native Linux machine.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to use `Binary` format for images
 
 Instead of sending image data over MQTT as a `String`, you can use the `Binary` format.

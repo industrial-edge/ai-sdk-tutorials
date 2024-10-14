@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to use pipeline parameters
 
 If a component is used in a pipeline with parameters, the component must provide an `update_parameters()` function to handle parameter updates. AI Inference Server calls `update_parameters()` at least once after the pipeline has been started. However, before passing the first input to the `update_parameters()` component, it can be called again if pipeline parameters are changed while the pipeline is running. AI Inference Server ensures that calls to update_parameters()` and `process_input()` do not occur at the same time.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # Howto notebooks
 
 These collection of Jupyter Notebook files serves you runnable examples for various steps in the ML workflow that you help you master pipeline creation.

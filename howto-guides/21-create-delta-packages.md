@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to create Delta packages
 
 An edge configuration package can be large in size, and the time of deployment strongly correlates with this size. To reduce this time, AI Inference Server is able to create a new version of a pipeline form an original version and a delta package.

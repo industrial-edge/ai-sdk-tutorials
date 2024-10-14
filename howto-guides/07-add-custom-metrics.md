@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to add custom metrics
 
 You can implement any model metrics as component metrics that you can use to evaluate the performance of the model in the AI Model Monitor. The pipeline automatically generates the metrics as outputs that are automatically mapped to the required Databus topics. In the AI Inference Server, you only need to select Databus as the data connection for these metric outputs.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to use AI SDK in an Azure MLOps environment
 AI SDK can be used in an Azure MLOps solution. With the required infrastructure in place, Azure MLOps pipelines can leverage AI SDK to create packages, which can be deployed to AI Inference Server using AI Model Manager connected to Azure.
 

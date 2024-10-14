@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # Setting up an environment manager
 
 When using multiple project templates and notebook editors, we recommend using an environment manager that can help you keeping those environments and the potentially conflicting requirements separate.\

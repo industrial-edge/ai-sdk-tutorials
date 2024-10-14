@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2020-2024 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
+
 # How to configure the GPU Runtime component
 
 AI Inference Server supports GPU acceleration for executing pipelines that include a GPU Runtime component. This component is specifically designed to execute ONNX models on the GPU, as ONNX models are the only supported model type in AI Inference Server. Additionally, the GPU Runtime component offers various configuration options to optimize the model's performance on the GPU. 
