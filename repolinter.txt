@@ -1,0 +1,58 @@
+Target directory: /home/zsszabo/github/ai-sdk-tutorials
+Axiom language failed to run with error: Linguist not installed
+Axiom license failed to run with error: Licensee not installed
+Lint:
+✖ license-file-exists: Did not find a file matching the specified patterns
+	✖ LICENSE*
+	✖ COPYING*
+✔ readme-file-exists: Found file (README.md)
+✖ contributing-file-exists: Did not find a file matching the specified patterns ({docs/,.github/,}CONTRIB*)
+✖ code-of-conduct-file-exists: Did not find a file matching the specified patterns
+	✖ {docs/,.github/,}CODEOFCONDUCT*
+	✖ {docs/,.github/,}CODE-OF-CONDUCT*
+	✖ {docs/,.github/,}CODE_OF_CONDUCT*
+✔ changelog-file-exists: Found file (CHANGELOG.md)
+✖ security-file-exists: Did not find a file matching the specified patterns ({docs/,.github/,}SECURITY.md)
+✖ support-file-exists: Did not find a file matching the specified patterns ({docs/,.github/,}SUPPORT*)
+✖ readme-references-license: Doesn't contain license (README.md)
+✔ binaries-not-present: Excluded file type doesn't exist (**/*.exe,**/*.dll,!node_modules/**)
+✖ test-directory-exists: Did not find a file matching the specified patterns
+	✖ **/test*
+	✖ **/specs
+✖ integrates-with-ci: Did not find a file matching the specified patterns
+	✖ .gitlab-ci.yml
+	✖ .travis.yml
+	✖ appveyor.yml
+	✖ .appveyor.yml
+	✖ circle.yml
+	✖ .circleci/config.yml
+	✖ Jenkinsfile
+	✖ .drone.yml
+	✖ .github/workflows/*
+	✖ azure-pipelines.yml
+✔ code-of-conduct-file-contains-email: Did not find file matching the specified patterns
+	✖ CODEOFCONDUCT*
+	✖ CODE-OF-CONDUCT*
+	✖ CODE_OF_CONDUCT*
+	✖ .github/CODEOFCONDUCT*
+	✖ .github/CODE-OF-CONDUCT*
+	✖ .github/CODE_OF_CONDUCT*
+⚠ source-license-headers-exist: Did not find file matching the specified patterns
+	⚠ **/*.js
+	⚠ !node_modules/**
+✖ github-issue-template-exists: Did not find a file matching the specified patterns
+	✖ ISSUE_TEMPLATE*
+	✖ .github/ISSUE_TEMPLATE*
+✖ github-pull-request-template-exists: Did not find a file matching the specified patterns
+	✖ PULL_REQUEST_TEMPLATE*
+	✖ .github/PULL_REQUEST_TEMPLATE*
+ℹ javascript-package-metadata-exists: ignored due to unsatisfied condition(s): "language=javascript"
+ℹ ruby-package-metadata-exists: ignored due to unsatisfied condition(s): "language=ruby"
+ℹ java-package-metadata-exists: ignored due to unsatisfied condition(s): "language=java"
+ℹ python-package-metadata-exists: ignored due to unsatisfied condition(s): "language=python"
+ℹ objective-c-package-metadata-exists: ignored due to unsatisfied condition(s): "language=objective-c"
+ℹ swift-package-metadata-exists: ignored due to unsatisfied condition(s): "language=swift"
+ℹ erlang-package-metadata-exists: ignored due to unsatisfied condition(s): "language=erlang"
+ℹ elixir-package-metadata-exists: ignored due to unsatisfied condition(s): "language=elixir"
+ℹ license-detectable-by-licensee: ignored because level is "off"
+ℹ notice-file-exists: ignored due to unsatisfied condition(s): "license=Apache-2.0"
