@@ -1,0 +1,61 @@
+# Direct dependencies
+numpy==1.26.4
+onnx==1.16.2
+onnxruntime==1.18.1
+tensorflow==2.9.0; python_version == '3.10'
+tensorflow==2.17.0; python_version == '3.11'
+tf2onnx==1.16.1
+
+# Transitive dependencies
+MarkupSafe==2.1.5
+absl-py==2.1.0
+astunparse==1.6.3
+certifi==2024.8.30
+charset-normalizer==3.3.2
+coloredlogs==15.0.1
+flatbuffers==1.12; python_version == '3.10'
+flatbuffers==24.3.25; python_version == '3.11'
+gast==0.4.0; python_version == '3.10'
+gast==0.6.0; python_version == '3.11'
+google-auth==2.32.0
+google-auth-oauthlib==0.4.6; python_version == '3.10'
+google-pasta==0.2.0
+grpcio==1.65.1
+h5py==3.11.0
+humanfriendly==10.0
+idna==3.7
+keras==2.9.0; python_version == '3.10'
+keras==3.4.1; python_version == '3.11'
+keras-preprocessing==1.1.2; python_version == '3.10'
+libclang==18.1.1
+markdown==3.6
+markdown-it-py==3.0.0; python_version == '3.11'
+mdurl==0.1.2; python_version == '3.11'
+ml-dtypes==0.4.0; python_version == '3.11'
+mpmath==1.3.0
+namex==0.0.8; python_version == '3.11'
+oauthlib==3.2.2; python_version == '3.10'
+opt-einsum==3.3.0
+optree==0.12.1; python_version == '3.11'
+packaging==24.1
+protobuf==3.20.3
+pyasn1==0.6.0; python_version == '3.10'
+pyasn1-modules==0.4.0; python_version == '3.10'
+requests==2.32.3
+requests-oauthlib==2.0.0; python_version == '3.10'
+rich==13.7.1; python_version == '3.11'
+rsa==4.9; python_version == '3.10'
+six==1.16.0; python_version == '3.10'
+sympy==1.13.1
+tensorboard==2.9.0; python_version == '3.10'
+tensorboard==2.17.0; python_version == '3.11'
+tensorboard-data-server==0.6.1; python_version == '3.10'
+tensorboard-data-server==0.7.2; python_version == '3.11'
+tensorboard-plugin-wit==1.8.1; python_version == '3.10'
+tensorflow-estimator==2.9.0; python_version == '3.10'
+tensorflow-io-gcs-filesystem==0.37.1
+termcolor==2.4.0
+typing-extensions==4.12.2
+urllib3==2.2.2
+werkzeug==3.0.3
+wrapt==1.16.0

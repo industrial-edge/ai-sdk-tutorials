@@ -1,0 +1,5 @@
+Pillow==10.3.0
+protobuf==3.20.3
+tensorflow==2.17.0
+opencv_python_headless ==4.9.0.80
+numpy ==1.24.2

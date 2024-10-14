@@ -1,0 +1,12 @@
+name: torch_kernel
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.11.9
+- pip:
+  - ipykernel
+  - -r requirements.txt
+
+# Register this new environment as a Jupyter kernel by running
+# python -m ipykernel install --user --name "torch_kernel" --display-name "torch_kernel"

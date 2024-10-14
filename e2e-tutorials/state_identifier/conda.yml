@@ -1,0 +1,15 @@
+name: state_identifier
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.11.9
+- ipykernel
+- ipython=8.26.0
+- pip
+- pip:
+  - -f lib/
+  - -r requirements.txt
+
+# Register new environment for jupyter:
+# conda run -n state_identifier python -m ipykernel install --user --name state_identifier --display-name "Python (state_identifier)"
