@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+SPDX-License-Identifier: MIT
+-->
+
 # AI SDK, Tutorials and guides
 
 ## Introduction to AI SDK

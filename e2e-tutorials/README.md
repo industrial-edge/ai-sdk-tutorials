@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+SPDX-License-Identifier: MIT
+-->
+
 # End-to-end tutorials
 
 These Machine Learning tutorials walks you through the entire ML workflow from creating and training models to packaging them for AI Inference Server and testing them in your local environment.

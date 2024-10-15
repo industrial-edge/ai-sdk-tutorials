@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+SPDX-License-Identifier: MIT
+-->
+
 ## Do you want to contribute code? ##
 
 Thanks for your interest in contributing. Anybody is free to propose any changes to this repository using Pull Requests. We appreciate every Pull Request, but merging cannot be guaranteed. Before you submit your code, please check the following prerequisites: 

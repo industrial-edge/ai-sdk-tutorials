@@ -1,4 +1,6 @@
-# Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
+# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
+#
+# SPDX-License-Identifier: MIT
 
 """
 Experimental inference wrapper for standard AI Inference Server that feeds Vision Connector payload into a TensorFlow image classification model

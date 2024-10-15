@@ -1,4 +1,8 @@
-<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!--
+SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
+
+SPDX-License-Identifier: MIT
+-->
 
 # AI SDK Batch State Identifier example
 

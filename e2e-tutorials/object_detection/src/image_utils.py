@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText": "Copyright (C) Siemens AG 2021. All Rights Reserved."
+#
+# SPDX-License-Identifier: MIT
+
 import numpy as np
 from PIL import ImageDraw, ImageFont
 
