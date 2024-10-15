@@ -1,4 +1,9 @@
-MIT License
+# Reference Architecture for Industrial AI on Azure
+
+## Overview
+The project is licensed under the MIT license given below.
+
+## MIT License
 
 Copyright (c) 2024 Siemens
 

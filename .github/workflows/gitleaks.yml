@@ -1,0 +1,16 @@
+name: Gitleaks Scan
+
+on: [push, pull_request]
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Gitleaks
+        uses: zricethezav/gitleaks-action@v1.3.0
+        with:
+          args: "--path=."
+          
