@@ -5,7 +5,7 @@ The project is licensed under the MIT license given below.
 
 ## MIT License
 
-SPDX-FileCopyrightText: Copyright (C) 2024 Siemens
+Copyright (C) 2024 Siemens
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
