@@ -1,5 +1,4 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
 SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
 
 SPDX-License-Identifier: MIT

@@ -21,11 +21,12 @@ Add summary of the found bug
 
 ## Version of the used components
 
-Which versions of the Industrial Edge components did you use?
+Which versions of the Industrial Application did you use?
 e.g.
 
-- Industrial Edge Device: V1.2.0-56
-- Performance Insight: V1.2.0
+- Industrial AI Inference Server: V2.1.0
+- Industrial AI Model Manager: V1.0.0
+- Industrial AI Model Monitor: V1.0.0
 - ...
 
 ## Steps to reproduce
