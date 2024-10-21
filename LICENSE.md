@@ -1,4 +1,4 @@
-# Reference Architecture for Industrial AI on Azure
+# Industrial AI Software Development KIT
 
 ## Overview
 The project is licensed under the MIT license given below.
