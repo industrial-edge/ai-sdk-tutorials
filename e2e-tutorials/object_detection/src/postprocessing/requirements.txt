@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+#
+# SPDX-License-Identifier: MIT
+
+# Runtime dependencies
+Pillow ==10.3.0
+urllib3 ==2.2.2
+numpy ==1.24.2
+

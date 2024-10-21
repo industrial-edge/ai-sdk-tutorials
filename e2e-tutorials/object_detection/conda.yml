@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText": "Copyright (C) Siemens AG 2021. All Rights Reserved."
+#
+# SPDX-License-Identifier: MIT
+
+name: object_detection
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.11.9
+- ipykernel
+- ipython=8.26.0
+- pip
+- pip:
+  - -f lib/
+  - -r requirements.txt
+
+# Register new environment for jupyter:
+# conda run -n  object_detection python -m ipykernel install --user --name object_detection --display-name "Python (object_detection)"

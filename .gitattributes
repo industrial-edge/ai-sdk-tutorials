@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: Copyright 2020 - 2024 Siemens AG
+#
+# SPDX-License-Identifier: MIT
+
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
