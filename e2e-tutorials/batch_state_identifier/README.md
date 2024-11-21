@@ -69,11 +69,7 @@ The following commands show how to set up such an environment.
 
 ```commandline
 # You can choose your preferred Python environment manager to create the separated Python environment.
-# We show examples for `conda` and `venv`.
-
-# via conda
-conda create -n state_identifier python=3.11.9
-conda activate state_identifier
+# We show examples for `venv`.
 
 # via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
 {PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/state_identifier

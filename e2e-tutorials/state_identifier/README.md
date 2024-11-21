@@ -28,13 +28,7 @@ If you are using Windows, please refer [WINDOWS_SETUP.md](docs/WINDOWS_SETUP.md)
 
 You can choose your preferred Python environment manager to create the separated Python environment.
 
-We show examples for `conda` and `venv`.
-
-```bash
-# via conda
-conda create -n state_identifier python=3.11.9
-conda activate state_identifier
-```
+We show examples for `venv`.
 
 ```bash
 # via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}

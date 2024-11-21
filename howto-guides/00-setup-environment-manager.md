@@ -10,45 +10,9 @@ When using multiple project templates and notebook editors, we recommend using a
 Below you can find instructions for setting up two environment managers:
 
 - [Setting up an environment manager](#setting-up-an-environment-manager)
-  - [Setting up Conda](#setting-up-conda)
   - [Setting up Python venv](#setting-up-python-venv)
 
 You can choose any of the above environment managers or your preferred environment manager.
-
-## Setting up Conda
-
-If you choose to install Python using Conda you need a Conda edition installed on your machine. The following page provides guidance on choosing between the [editions of Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html).\
-
-With Conda, you can select the Python version when you create a new environment. The rest of the section assumes setting up your conda environment using [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#linux-installers)
-
-> ⚠️ **Warning**\
-Conda is dual licenced with a commercial and a free licence.\
-Please study the license terms of Conda to determine whether you can use it for free or need to pay a license fee.
-
-After the installer is downloaded, start it using a bash shell.
-
-```bash
-bash "~/Downloads/Miniconda3-py310_23.1.0-1-Linux-x86_64.sh"
-```
-
-After accepting the licence, the installer will ask for a destination folder. By default, it suggests
-
-> /home/${USER}/miniconda3\
-
-Press ENTER to confirm the location, or type in the desired folder path.
-
-As the last step it will offer to put a conda setup script into your shell initializer script (`~/.bashrc`).
-
-> Do you wish the installer to initialize Miniconda3
-> by running conda init? [yes|no]
-
-If you answer yes, conda will automatically activate the `base` environment when you start a new shell. This can be disabled while keeping the rest of the conda initializer script.
-
-To disable the automatic activation of the base environment, run:
-
-```bash
-conda config --set auto_activate_base false
-```
 
 ## Setting up Python venv
 

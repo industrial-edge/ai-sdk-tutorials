@@ -16,10 +16,10 @@ This tutorial explains how to convert a Keras Model stored in tensorflow's 'h5' 
 
 The tutorial will also give you ways to execute your model on your local machine.
 
-## Using conda
+## Using Virtual Python Environment
 
-If you are using conda as your virtual environment manager, you can easily create an environment with all the necessary dependencies installed using the below command in your terminal
+If you are using a virtual python environment manager, you can easily install all the necessary dependencies from requirements.txt
 
 ```bash
-conda env create -f keras-to-onnx.conda.yml
+python -m pip install -r requirements.txt
 ```

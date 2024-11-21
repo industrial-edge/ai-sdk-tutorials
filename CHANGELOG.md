@@ -9,7 +9,7 @@ Tutorials for AI Software Development Kit
 
 Known issues:
 
-- Python 3.8.10 is the final regular bugfix release of Python 3.8 with binary installers. We recommend you to use the most recent bugfix release of Python 3.8 for productive use. You can build it from the sources or obtain it via conda if available. Please note that conda requires a license for business use. For non-productive use, you can attempt using AI SDK with Python 3.8.10.
+- Python 3.8.10 is the final regular bugfix release of Python 3.8 with binary installers. We recommend you to use the most recent bugfix release of Python 3.8 for productive use. You can build it from the sources.
 - The project templates have only been tested on 64-bit platforms. We do not recommend using them on 32-bit platforms.
 - Python Package: Pillow ≤ 9.4.0 - Multiple Vulnerabilities
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
