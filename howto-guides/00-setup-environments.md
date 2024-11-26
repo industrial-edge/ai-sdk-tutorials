@@ -6,34 +6,27 @@ SPDX-License-Identifier: MIT
 
 # How to setup environment manager environments
 
-You can use your preferred Python environment manager to create the Python environment. We show here the commands for `Conda` and Python `venv`, taking project template Image Classification as an example. For other project templates, you have to substitute the name `image_classification` as described in the template's README.
+You can use your preferred Python environment manager to create the Python environment. We show here the commands Python `venv`, taking project template Image Classification as an example. For other project templates, you have to substitute the name `image_classification` as described in the template's README.
 
 > **Note**\
 > It is strongly recommended to create independent environments for project templates, and also for Jupyter Lab.
-
-## Create Conda environment including Python and activate it
-
-```dosbatch
-conda create -n image_classification python=3.11.9
-conda activate image_classification
-```
 
 ## Create a Python virtual environment and activate it
 
 This method requires a preinstalled Python 3.11 runtime.
 
-```dosbatch
-python -m venv %USERPROFILE%\venv\image_classification
-%USERPROFILE%\venv\image_classification\Scripts\activate.bat
+```bash
+python -m venv ~/.venv/image_classification
+. ~/.venv/image_classification/bin/activate
 ```
 
 ## Separate Jupyter Lab environment
 
 We recommend creating an environment for installing and running Jupyter Lab, to avoid dependency version collisions with AI SDK.
 
-```dosbatch
-conda create -n jupyter_env python=3.11.9
-conda activate jupyter_env
+```bash
+python -m venv ~/.venv/jupyter
+. ~/.venv/jupyter/bin/activate
 pip install jupyterlab
 ```
 

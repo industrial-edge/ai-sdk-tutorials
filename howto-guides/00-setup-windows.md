@@ -10,10 +10,9 @@ SPDX-License-Identifier: MIT
 
 You will need a 64 bit Windows version to run AI SDK and the notebooks in the templates.
 
-Before you begin, make sure that you have internet access. If you access the internet through a proxy, e.g. because you are working in a corporate network directly or via VPN, please make sure that you have configured `pip` and, if you plan to use it, `conda` to use the correct proxy. Setting the environment variables `http_proxy` and `https_proxy` covers both. A detailed explanation about alternative solutions is provided here:
+Before you begin, make sure that you have internet access. If you access the internet through a proxy, e.g. because you are working in a corporate network directly or via VPN, please make sure that you have configured `pip` to use the correct proxy. Setting the environment variables `http_proxy` and `https_proxy` covers both. A detailed explanation about alternative solutions is provided here:
 
 - https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server
-- https://docs.anaconda.com/anaconda/user-guide/tasks/proxy/
 
 If you have no `USERPROFILE` environment variable set, please set it so that it contains the path to a directory that belongs personally to you. You can check the variable by echoing it on Windows Command Prompt.
 
