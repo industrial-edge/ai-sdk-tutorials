@@ -33,7 +33,7 @@ We assume that Jupyter Lab or another notebook editor is already installed on yo
 We recommend that you run the notebooks using the `object_detection` ipython kernel from the `object_detection` Python environment.
 
 The following commands show how to set up such an environment on Linux.
-If you are using Windows, please refer [WINDOWS_SETUP.md](docs/WINDOWS_SETUP.md).
+If you are using Windows, please find the minor differences in the comments.
 
 You can choose your preferred Python environment manager to create the separated Python environment.
 We show examples for `venv`.
@@ -41,7 +41,7 @@ We show examples for `venv`.
 ```bash
 # via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
 {PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/object_detection
-{ENV_DIR}/object_detection/Scripts/activate
+{ENV_DIR}/object_detection/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 ```
 

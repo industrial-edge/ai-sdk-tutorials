@@ -73,7 +73,7 @@ The following commands show how to set up such an environment.
 
 # via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
 {PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/state_identifier
-{ENV_DIR}/state_identifier/Scripts/activate
+{ENV_DIR}/state_identifier/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 # Once the environment is created and activated you need to register as an ipykernel.
 pip install ipykernel

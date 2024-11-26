@@ -24,7 +24,7 @@ _Hint: This readme is available both as HTML and Markdown. The HTML version you 
 We assume that Jupyter Notebooks or Jupyter Lab is already installed on your machine.
 It is recommended that notebooks are run using the `state_identifier` ipython kernel from the `state_identifier` Python environment.
 The following commands show how to set up such an environment on Linux.
-If you are using Windows, please refer [WINDOWS_SETUP.md](docs/WINDOWS_SETUP.md).
+If you are using Windows, please find the minor differences in the comments.
 
 You can choose your preferred Python environment manager to create the separated Python environment.
 
@@ -33,7 +33,7 @@ We show examples for `venv`.
 ```bash
 # via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
 {PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/state_identifier
-{ENV_DIR}/state_identifier/Scripts/activate
+{ENV_DIR}/state_identifier/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 ```
 
 Once the environment is created and activated you need to install required packages including AI SDK and ipykernel.
