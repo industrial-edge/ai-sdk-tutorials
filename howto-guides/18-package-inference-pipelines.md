@@ -153,7 +153,7 @@ attempt to auto-wire the components passed as a list,
 - connecting the last component to the pipeline output.
 
 Some components may require special variable types, e.g. the GPU component must receive its inputs in a specific format, and it will produce the output in a specific format too.
-Please refer to [Guideline for writing runtime components](writing_components.md) for variable type handling.
+Please refer to [How to use variable types](03-use-variable-types.md) for variable type handling.
 In the general case, we recommend that you pass data from one component to the other in a single variable of type `String`, serializing and deserializing whatever data you have through a string.
 
 The low-level methods of class `Pipeline` allow you to define arbitrary wiring between components and pipeline inputs and outputs
