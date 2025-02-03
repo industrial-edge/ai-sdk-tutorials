@@ -1,4 +1,9 @@
-<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!--
+Copyright (C) Siemens AG 2021. All Rights Reserved.
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
 
 # AI SDK Soft Sensor e2e tutorial
 
