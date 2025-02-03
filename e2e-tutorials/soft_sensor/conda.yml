@@ -1,0 +1,15 @@
+name: image_classification
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.11.9
+- ipykernel
+- ipython=8.26.0
+- pip
+- pip:
+  - -f lib/
+  - -r requirements.txt
+
+# Register new environment for jupyter:
+# conda run -n image_classification python -m ipykernel install --user --name image_classification --display-name "Python (image_classification)"

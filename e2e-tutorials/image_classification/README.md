@@ -27,11 +27,11 @@ The following commands show how to set up such an environment on Linux.
 If you are using Windows, please find the minor differences in the comments.
 
 You can choose your preferred Python environment manager to create the separated Python environment.
-We show examples for `venv`.
+We show example for `venv`.
 
 ```bash
-# via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
-{PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/image_classification
+# via venv assuming Python 3.11 is installed on path {PYTHON_HOME_3.11}
+{PYTHON_HOME_3.11}/bin/python -m venv {ENV_DIR}/image_classification
 {ENV_DIR}/image_classification/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 ```

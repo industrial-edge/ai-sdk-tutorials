@@ -1,0 +1,15 @@
+# Dependencies used in entrypoint.py:
+joblib ==1.4.2
+numpy ==1.24.2
+pandas ==2.2.0
+
+# Model dependencies:
+scikit-learn ==1.3.2
+
+# Transitive dependencies of pandas:
+pytz ==2024.2
+tzdata ==2024.2
+
+# Transitive dependency of scikit-learn:
+scipy ==1.14.1
+threadpoolctl ==3.5.0

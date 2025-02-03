@@ -1,0 +1,7 @@
+/lib/*
+/data/processed/*
+/reports/*/*
+/packages/*
+/test*/*
+
+!models/object_detection.onnx

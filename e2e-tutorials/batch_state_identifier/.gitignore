@@ -1,0 +1,6 @@
+/lib/*
+/data/*
+/models/*
+/reports/*
+/packages/*
+/test*/*

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 # Direct dependencies
-simaticai==2.2.0
+simaticai==2.3.0
 joblib==1.4.2  # Transitive dependency from simaticai
 numpy==1.24.2  # Transitive dependency from simaticai
 pandas==2.2.2
