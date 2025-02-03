@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -27,8 +27,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 Then you can install Python 3.8 and the `venv` environment manager. After that, you need to add the Python versions to the alternatives, with version 3.8 having a higher priority.
 
 ```bash
-sudo apt install python3.8 python3.8-venv
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
+sudo apt install python3.10 python3.10-venv
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 ```
 

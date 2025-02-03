@@ -1,12 +1,12 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
 
 # How to setup environment manager environments
 
-You can use your preferred Python environment manager to create the Python environment. We show here the commands Python `venv`, taking project template Image Classification as an example. For other project templates, you have to substitute the name `image_classification` as described in the template's README.
+You can use your preferred Python environment manager to create the Python environment. We show here the commands for Python `venv`, taking project template Image Classification as an example. For other project templates, you have to substitute the name `image_classification` as described in the template's README.
 
 > **Note**\
 > It is strongly recommended to create independent environments for project templates, and also for Jupyter Lab.

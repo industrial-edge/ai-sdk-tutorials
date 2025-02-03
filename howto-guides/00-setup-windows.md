@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -179,4 +179,4 @@ However, if you want to test your model locally, currently there is no official 
 You can either use the full TensorFlow package, or you can build your TFLite models in a virtual Linux environment.
 
 > **Note**\
-To complete setup, follow the steps described in the [Linux setup](00-setup-linux.md) section.
+To complete setup, follow the steps described in the [Linux setup](#linux-setup) section.

@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -108,7 +108,7 @@ type {
         dim_value: 224  # height of the image
       }
       dim {
-        dim_value: 224  # width of the image
+        dim_value: 300  # width of the image
       }
     }
   }

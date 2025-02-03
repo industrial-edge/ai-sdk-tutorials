@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -97,7 +97,7 @@ def process_input(payload: dict):
 
 <!-- from VCA user manual, section Accessing camera data via ZeroMQ -->
 `Vision Connector` supports mainly the standardized GenICam pixel formats, as the most common `Mono8`, `RGB8` formats or `BayerXX8` formats to reduce network traffic while the color information is still recorded.
-For different pixel format it is also recommended to use the GenICam naming convention as described in section 4.35 of the [GenICam_PFNC_2_4.pdf](https://www.emva.org/wp-content/uploads/GenICam_SFNC_v2_7.pdf) document.
+For different pixel format it is also recommended to use the GenICam naming convention as described in section 4.35 of the [GenICam_PFNC_2_4.pdf](https://www.emva.org/wp-content/uploads/GenICam_SFNC_v2_7.pdf​,) document.
 
 ### `ImageSet` as Output
 
