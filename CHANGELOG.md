@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) 2023 Siemens AG
+
+SPDX-License-Identifier: MIT
+-->
 # Version History
 
 Tutorials for AI Software Development Kit
