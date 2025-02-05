@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -223,4 +223,4 @@ def process_input(data):
     }
 ```
 
-See details in [How to use String format for images.md](14-use-string-format-for-images.md)
+See details in [How to use `ImageSet` format for images.md](14-use-imageset-format-for-images.md)

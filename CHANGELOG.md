@@ -1,8 +1,8 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+SPDX-FileCopyrightText: Copyright (C) 2023 Siemens AG
+
 SPDX-License-Identifier: MIT
 -->
-
 # Version History
 
 Tutorials for AI Software Development Kit
@@ -14,6 +14,17 @@ Known issues:
 - Python Package: Pillow ≤ 9.4.0 - Multiple Vulnerabilities
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
+
+# 2.3.0
+
+New features:
+
+- Soft sensor tutorial
+
+Fixed issues:
+
+- Python Package: Werkzeug < 3.0.6 - Multiple Vulnerabilities - GHSA-f9vj-2wh5-fj8j, GHSA-q34m-jh98-gwm2
+- Incorrect handling of width and height parameters.
 
 # 2.2.0
 

@@ -17,9 +17,9 @@ This tutorial explains how to convert a Keras Model stored in tensorflow's 'h5' 
 The tutorial will also give you ways to execute your model on your local machine.
 
 ## Using Virtual Python Environment
-
+ 
 If you are using a virtual python environment manager, you can easily install all the necessary dependencies from requirements.txt
-
+ 
 ```bash
 python -m pip install -r requirements.txt
 ```

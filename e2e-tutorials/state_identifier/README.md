@@ -28,11 +28,11 @@ If you are using Windows, please find the minor differences in the comments.
 
 You can choose your preferred Python environment manager to create the separated Python environment.
 
-We show examples for `venv`.
+We show example for `venv`.
 
 ```bash
-# via venv assuming Python 3.11.9 is installed on path {PYTHON_HOME_3.11.9}
-{PYTHON_HOME_3.11.9}/bin/python -m venv {ENV_DIR}/state_identifier
+# via venv assuming Python 3.11.10 is installed on path {PYTHON_HOME_3.11.10}
+{PYTHON_HOME_3.11.10}/bin/python -m venv {ENV_DIR}/state_identifier
 {ENV_DIR}/state_identifier/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 ```
 

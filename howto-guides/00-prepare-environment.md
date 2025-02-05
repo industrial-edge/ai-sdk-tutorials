@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2024 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
@@ -26,4 +26,4 @@ The brief [How to setup Linux](00-setup-linux.md) guide explains how to prepare 
 
 ## Prepare environments
 
-[How to prepare environment manager environments](00-setup-environments.md) explains how to setup different notebook editors to work with the tutorials provided with AI SDK.
+[How to prepare environment manager environments](00-prepare-environments) explains how to setup different notebook editors to work with the tutorials provided with AI SDK.
