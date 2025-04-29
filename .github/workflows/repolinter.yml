@@ -19,5 +19,4 @@ jobs:
         run: npm install -g repolinter
           
       - name: Run Repolinter
-        run: repolinter
-    continue-on-error: true
+        run: repolinter lint -r .github/repolint.json
