@@ -19,5 +19,4 @@ jobs:
         run: npm install -g repolinter
           
       - name: Run Repolinter
-        run: repolinter --config ./github/repolinter.json
-          
+        run: repolinter -r .repolinter.json

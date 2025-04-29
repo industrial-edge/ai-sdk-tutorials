@@ -20,4 +20,3 @@ jobs:
 
       - name: Run Reuse lint
         run: reuse lint
-  
