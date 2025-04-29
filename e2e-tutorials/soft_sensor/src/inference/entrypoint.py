@@ -1,4 +1,3 @@
-# Copyright (C) Siemens AG 2024. All Rights Reserved. Confidential.
 # SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 #
 # SPDX-License-Identifier: MIT
@@ -23,8 +22,11 @@ def process_input(payload: list):
     """
     
     phC_predictions = []
+    input_tags = ["temperature_A", "temperature_B", "temperature_C", "valve_position_A", "valve_position_B"]
+    
     for record in payload:
         df = pandas.DataFrame(record, index=[0])
+        df = df[input_tags]
         phC_predictions.append(linear_reg.predict(df))
 
     phC_predictions = np.array(phC_predictions).flatten()  # create a 1D numpy array

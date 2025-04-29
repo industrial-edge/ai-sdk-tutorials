@@ -15,6 +15,14 @@ Known issues:
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
 
+# 2.4.0
+
+New features:
+- Datastreams are introduced for local testing.
+
+Fixed issues:
+- Not used files were removed (payload.py)
+
 # 2.3.0
 
 New features:

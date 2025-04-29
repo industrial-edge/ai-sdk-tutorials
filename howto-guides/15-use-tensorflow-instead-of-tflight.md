@@ -13,9 +13,9 @@ In the [Image Classification](../e2e-tutorials/image_classification/README.md) e
 In the pipeline creation you need to add the TensorFlow related resources
 
 ```python
-# component.add_resources('..', ['src/payload.py', 'src/vision_classifier.py'])
+# component.add_resources('..', [''src/vision_classifier.py'])
 # Use this instead:
-component.add_resources('..', ['src/payload.py', 'src/vision_classifier_tf.py'])
+component.add_resources('..', ['src/vision_classifier_tf.py'])
 ```
 
 ```python

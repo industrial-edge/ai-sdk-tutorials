@@ -15,7 +15,6 @@ logger = LogModule()
 
 sys.path.insert(0, str(Path('./src').resolve()))
 import vision_classifier as classifier
-from payload import create_image_output
 
 
 IMAGE_WIDTH = 224

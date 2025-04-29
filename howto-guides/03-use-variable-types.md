@@ -48,117 +48,6 @@ To connect your pipeline to a custom application with its own data format, you c
 
 ### Specific variable types for images
 
-#### String
-
-AI Inference Server supports receiving URL-encoded images via MQTT as `String`. The payload type is str and can be extracted into a PIL image as follows:
-
-```python
-# define input
-
-component.add_input("image", "String")
-
-# extract payload
-
-def process_input(payload: dict):
-    url_encoded_image = payload["image"]
-    with urlopen(url_encoded_image) as response:
-        assert response.headers["Content-type"] in ["image/png", "image/jpeg"]
-    image_bytes = response.read()
-    pil_image = Image.open(io.BytesIO(image_bytes)).resize(IMAGE_SIZE)
-```
-
-#### Object
-
-Another supported type for images is `Object` which can be used to receive or send images via ZMQ.
-
-If the input variable is defined with type Object, the AI Inference Server takes the image from ZMQ and creates a specific payload format. In your code, this format can be processed and extracted into a PIL Image. A specific code example can be found in the [Image Classification pipeline](01-define-components.md#image-classification-pipeline) section of the [define components](01-define-components.md) howto guide.
-
-```python
-# define input
-
-component.add_input("image", "Object")
-
-# Object input format
-
-payload = { "image":
-            {
-            "resolutionWidth": image.width,
-            "resolutionHeight": image.height,
-            "mimeType": ["image/raw"],
-            "dataType": "uint8",
-            "channelsPerPixel": 3,
-            "image": _swap_bytes(image.tobytes())
-            }
-          }
-```
-
-When the output variable is defined with type Object, the output must be provided in a specific format. In your code, a dictionary must be created with a string and a bytes field.
-They must contain the width and height information in a JSON string and the UINT8 bytes of the raw image.
-
-```python
-# define output
-
-component.add_input("image_with_filter", "Object")
-
-# Object output format
-
-return {
-    "image_with_filter": {
-        "metadata": json.dumps( {
-            "resolutionWidth": image.width,
-            "resolutionHeight": image.height
-        }),
-        "bytes": image.tobytes()
-    }
-}
-```
-See details in [How to use `Object` format for images.md](13-use-object-format-for-images.md)
-
-#### Binary
-
-The most commonly supported data format is "Binary" that is used to receive or send a byte array over ZMQ.
-
-If an `input_variable` is defined as "Binary", the AI Inference Server provides it as a Python dictionary, where the variable name is the key, and the value is the binary data provided as the Python type "bytes".
-
-A specific code example can be found in the [Image Classification pipeline](01-define-components.md#image-classification-pipeline) section of the [define components](01-define-components.md) howto guide..
-
-```python
-# definition of input
-
-component.add_input("image", "Binary")
-
-# Binary input format
-
-with open('image.png', 'rb') as f:
-    binary = f.read()
-    payload = { "image": binary }
-...
-
-# Decode a PIL image from Binary data
-
-image = Image.open(io.BytesIO(binary))
-...
-```
-
-If an `output_variable` is defined with type "Binary" the output must be provided as a "bytes" value in the returned dictionary.
-
-```python
-
-# output definition
-
-component.add_input("processed_image", "Binary")
-
-# Binary output format from a PIL image
-
-membuf = io.BytesIO()
-image.save(membuf, format="png")
-return {
-    "processed_image": membuf.getvalue()
-}
-```
-
-See details in [How to use `Binary` format for images.md](13-use-object-format-for-images.md)
-
 #### ImageSet
 
 ImageSet data type allows receiving multiple images, along with their format, dimension information, and metadata. This is the image format supported by [Vision Connector](https://support.industry.siemens.com/cs/document/109822712/vision-connector?dti=0&lc=en-WW) application.
@@ -173,7 +62,7 @@ component.add_input("image_set", "ImageSet")
 
 def process_input(data: dict):
     image_set = data['image_set']
-    for image_data in image_set['image_list']:
+    for image_data in image_set['detail']:
         process_image_data(image_data['image'])
         # ...
 ```
@@ -193,28 +82,17 @@ def process_input(data):
     # ...
 
     image_set: {
-        "version": "1",
-        "camera_id": "...",
-        "timestamp": "2023-08-08T09:11:12.000Z",
-        "metadata": json.dumps({
-            "key1": "value1",
-            "key2": "value2",
-            # ...
-        }),
-        "image_list": [{
-            "id": "...",
-            "width": 640,
-            "height": 480,
-            "format": "<GeniCam image format>",
-            "timestamp": "2023-08-08T09:11:12.000Z",
-            "metadata": json.dumps({
-                "key1": "value1",
-                "key2": "value2",
-                # ...
-            }),
-            "image": b"..."
-        }, {
-            # ...
+        "version": "1",  # version of the Metadata format
+        "count": 1,  # Number of images on message
+        "timestamp": timestamp.isoformat(),  # Camera acquisition time
+        "detail": [{  # list of images with detailed information
+            "id": str(image_path),  # unique image identifier. this case we use the filename of the original image
+            "timestamp": str(timestamp.timestamp()),  # Timestamp provided by the camera
+            "width": width,  # image width
+            "height": height,  # image height
+            "format": "BayerRG8",  # image format configure
+            "metadata": "",  # optional extra information on image
+            "image": image_bytes  # image binary with the given 'format'
         }]
     }
 
