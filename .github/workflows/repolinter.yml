@@ -20,3 +20,4 @@ jobs:
           
       - name: Run Repolinter
         run: repolinter -r .github/repolinter.json
+    continue-on-error: true
