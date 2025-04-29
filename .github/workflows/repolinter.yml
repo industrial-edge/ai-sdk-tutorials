@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: Copyright 2024 Siemens AG
+#
+# SPDX-License-Identifier: MIT
+
+name: Repolinter Check
+on: [push, pull_request]
+
+jobs:
+  repo-lint:
+    name: "repolint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout repo"
+        uses: actions/checkout@v2.0.0
+        with:
+          fetch-depth: 0
+      - name: Test repolinter
+        uses: philips-labs/github-action-repolinter@master
