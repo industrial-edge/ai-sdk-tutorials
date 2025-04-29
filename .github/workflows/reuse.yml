@@ -7,15 +7,17 @@ name: Reuse Check
 on: [push]
 
 jobs:
-  reuse:
-    name: "reuse"
+  reuse-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: "checkout repo"
-        uses: actions/checkout@v2.0.0
-        with:
-          fetch-depth: 0
-      - name: Test reuse
-        uses: reuse-tool/reuse-action@v1.0.0
-        with:
-          args: check --all --verbose
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Reuse
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y reuse
+
+      - name: Run Reuse lint
+        run: reuse lint
+  
