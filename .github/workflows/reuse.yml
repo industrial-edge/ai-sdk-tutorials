@@ -2,19 +2,21 @@
 #
 # SPDX-License-Identifier: MIT
 
-name: Gitleaks Scan
+name: Reuse Check
 
 on: [push]
 
 jobs:
-  gitleaks:
+  reuse-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run Gitleaks
-        uses: zricethezav/gitleaks-action@v1.3.0
-        with:
-          args: "--path=."
-          
+      - name: Install Reuse
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y reuse
+
+      - name: Run Reuse lint
+        run: reuse lint

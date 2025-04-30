@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+# SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
 #
 # SPDX-License-Identifier: MIT
 
 # Direct dependencies
-simaticai==2.3.0
+simaticai==2.4.0
 joblib==1.4.2  # Transitive dependency from simaticai
 matplotlib==3.9.1
 numpy==1.24.2  # Transitive dependency from simaticai
@@ -36,6 +36,7 @@ requests==2.32.3
 rpds-py==0.17.1
 sympy==1.12
 urllib3==2.2.2
+wheel==0.45.1
 
 # Other transitive dependencies
 cloudpickle==3.0.0
@@ -51,6 +52,7 @@ pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 pytz==2024.1
 scipy==1.14.0
+six==1.16.0
 statsmodels==0.14.2
 stumpy==1.13.0
 threadpoolctl==3.5.0

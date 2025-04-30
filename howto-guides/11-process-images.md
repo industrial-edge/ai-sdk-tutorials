@@ -107,7 +107,7 @@ For more details, refer to the [Vision Connector User Guide](https://support.ind
 
 ## Other formats
 
-There are other options to use different payload formats to receive images from sources that do not support `ImageSet. We recommend a ZMQ connection to receive images, over which you can receive image information in `Binary` or `Object` format.  
+There are other options to use different payload formats to receive images from sources that do not support `ImageSet`. We recommend a ZMQ connection to receive images, over which you can receive image information in `Binary` or `Object` format.  
 
 A short description on their capabilities can be found in documents  
 - [12-use-binary-format-for-images.md](12-use-binary-format-for-images.md),   

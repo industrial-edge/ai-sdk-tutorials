@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: Copyright 2024 Siemens AG
+#
+# SPDX-License-Identifier: MIT
+
+name: Repolinter Check
+on: [push]
+
+jobs:
+  repo-lint:
+    name: "repolint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout repo"
+        uses: actions/checkout@v2.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Install Repolinter
+        run: npm install -g repolinter
+          
+      - name: Run Repolinter
+        run: repolinter lint -r .github/repolint.json
