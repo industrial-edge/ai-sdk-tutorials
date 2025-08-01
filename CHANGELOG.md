@@ -27,6 +27,14 @@ Fixed issues:
 - Google Protocol Buffers (protobuf) - End of Life Notification (EOL)
 - Jinja2 < 3.1.5 - Multiple Local Sandbox Bypass Vulnerabilities - GHSA-q2x7-8rv6-6q7h, GHSA-gmj6-6f8f-6699;Affected
 
+# 2.4.0
+
+New features:
+- Datastreams are introduced for local testing.
+
+Fixed issues:
+- Not used files were removed (payload.py)
+
 # 2.3.0
 
 New features:
