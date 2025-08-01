@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
+SPDX-FileCopyrightText: 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->

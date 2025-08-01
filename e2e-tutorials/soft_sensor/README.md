@@ -1,10 +1,8 @@
 <!--
-Copyright (C) Siemens AG 2021. All Rights Reserved.
-SPDX-FileCopyrightText: Copyright (C) 2020 - 2025 Siemens AG
+SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
 
 SPDX-License-Identifier: MIT
 -->
-
 # AI SDK Soft Sensor e2e tutorial
 
 This is a machine learning project intended to create a pipeline with a Soft Sensor running on AI Inference Server.  

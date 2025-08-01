@@ -1,5 +1,6 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+SPDX-FileCopyrightText: 2025 Siemens AG
+
 SPDX-License-Identifier: MIT
 -->
 

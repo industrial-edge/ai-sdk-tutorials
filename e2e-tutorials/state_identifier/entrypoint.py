@@ -1,8 +1,6 @@
-# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
-#
+# SPDX-FileCopyrightText: 2025 Siemens AG
 # SPDX-License-Identifier: MIT
 
-import json
 import sys
 from pathlib import Path
 

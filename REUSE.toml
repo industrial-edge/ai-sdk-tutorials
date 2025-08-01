@@ -1,0 +1,69 @@
+version = 1
+SPDX-PackageName = "reference-architecture-for-industrial-ai-on-azure"
+SPDX-PackageDownloadLocation = "https://github.com/industrial-edge/reference-architecture-for-industrial-ai-on-azure"
+
+[[annotations]]
+path = "**/**.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.jpg"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.onnx"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.drawio"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.h5"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.pth"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.pbtxt"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.csv"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.zip"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "**/**.ipynb"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Siemens AG"
+SPDX-License-Identifier = "MIT"
