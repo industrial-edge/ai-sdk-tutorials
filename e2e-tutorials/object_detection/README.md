@@ -3,7 +3,6 @@ SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
 
 SPDX-License-Identifier: MIT
 -->
-
 # AI SDK Object Detection Tutorial
 
 This is an AI SDK tutorial intended to create an object detection pipeline running on AI Inference Server with GPU extension.
@@ -68,7 +67,7 @@ The notebook [01-CreateTestSet.ipynb](./notebooks/01-CreateTestSet.ipynb) explai
 
 ### 2. Analyzing and fixing the model ONNX format
 
-The notebook [10-ObjectDetectionModel.ipynb](./notebooks/10-ObjectDetectionModel.ipynb) explains the used model, the possible mistakes in the ONNX definition and how to correct them. By the end of the execution of the notebook you will have an **well prepared onnx model** to package.
+The notebook [10-ObjectDetectonModel.ipynb](./notebooks/10-ObjectDetectonModel.ipynb) explains the used model, the possible mistakes in the ONNX definition and how to correct them. By the end of the execution of the notebook you will have an **well prepared onnx model** to package.
 
 ### 3. Creating Pre- and Postprocessing steps to support the GPURuntimeComponent
 

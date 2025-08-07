@@ -3,7 +3,6 @@ SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
 
 SPDX-License-Identifier: MIT
 -->
-
 # AI SDK Image Classification project template
 
 This is a machine learning project intended to create an image classification pipeline running on AI Inference Server.

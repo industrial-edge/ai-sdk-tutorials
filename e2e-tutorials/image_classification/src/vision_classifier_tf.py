@@ -1,5 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
-#
+# SPDX-FileCopyrightText: 2025 Siemens AG
 # SPDX-License-Identifier: MIT
 
 """
@@ -18,18 +17,17 @@ model = keras.models.load_model('models/classification_mobilnet.h5')
 
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
-IMAGE_SIZE = (IMAGE_WIDTH, IMAGE_HEIGHT)
 SCALE = 255
 
 
 def predict_from_image(pil_image):
     """
-    Takes a PIL image and returns the index and the probability of the predicted class.
+    Takes an image and returns the index and the probability of the predicted class.
     """
     global IMAGE_WIDTH, IMAGE_HEIGHT, SCALE
 
     input_arr = imglib.img_to_array(pil_image)*1/SCALE
-    assert input_arr.shape == (IMAGE_WIDTH, IMAGE_HEIGHT, 3), "The input image must contain RGB channels but no alpha."
+    assert input_arr.shape == (IMAGE_HEIGHT, IMAGE_WIDTH, 3), "The input image must contain RGB channels but no alpha."
     input_arr = np.array([input_arr], dtype=np.float32)  # Convert single image to a batch.
 
     predictions = model(input_arr, training=False)
