@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
-#
+# Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
 # SPDX-License-Identifier: MIT
+
 """
 Building blocks for scikit-learn pipelines.
 

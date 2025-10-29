@@ -1,8 +1,9 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) 2023 Siemens AG
+SPDX-FileCopyrightText: 2025 Siemens AG
 
 SPDX-License-Identifier: MIT
 -->
+
 # Version History
 
 Tutorials for AI Software Development Kit
@@ -15,6 +16,22 @@ Known issues:
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
 
+# 2.6.0
+
+From this version we discontinue testing the tutorials on other environments than Pyhon 3.12 for Linux type OS.
+All of represented examples can be tried in other environments, but the best experience only guaranteed the environment above.
+
+New features:
+
+- Disable installing dependencies for a component
+- New YOLO E2E Segmentation tutorial
+- Image classification tutorial is extended with visualization example
+- Object detection tutorial is extended with visualization example
+
+Improvements:
+
+- Updated tutorials to Python 3.12.10
+
 # 2.5.0
 
 Fixed issues:
@@ -26,14 +43,6 @@ Fixed issues:
 - PyTorch < 2.6.0 - Remote Code Execution Vulnerability - GHSA-53q9-r3pm-6pq6
 - Google Protocol Buffers (protobuf) - End of Life Notification (EOL)
 - Jinja2 < 3.1.5 - Multiple Local Sandbox Bypass Vulnerabilities - GHSA-q2x7-8rv6-6q7h, GHSA-gmj6-6f8f-6699;Affected
-
-# 2.4.0
-
-New features:
-- Datastreams are introduced for local testing.
-
-Fixed issues:
-- Not used files were removed (payload.py)
 
 # 2.3.0
 

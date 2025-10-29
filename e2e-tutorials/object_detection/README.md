@@ -1,8 +1,6 @@
-<!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
+<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
 
-SPDX-License-Identifier: MIT
--->
 # AI SDK Object Detection Tutorial
 
 This is an AI SDK tutorial intended to create an object detection pipeline running on AI Inference Server with GPU extension.
@@ -38,20 +36,19 @@ You can choose your preferred Python environment manager to create the separated
 We show example for `venv`.
 
 ```bash
-# via venv assuming Python 3.11.10 is installed on path {PYTHON_HOME_3.11.10}
-{PYTHON_HOME_3.11.10}/bin/python -m venv {ENV_DIR}/object_detection
+# via venv assuming Python 3.12 is installed on path {PYTHON_HOME_3.12}
+{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/object_detection
 {ENV_DIR}/object_detection/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 ```
 
 Once the environment is created and activated you need to install required packages including AI SDK and ipykernel.
 These packages must be installed at the same time for pip's dependency resolution to work correctly.
-_Note:_ `$DOWNLOAD_PATH` is the _directory path containing simaticai sdk wheel_, which can be set in environment variables or replaced in the command below.
 
 Finally, register an ipykernel for running the notebooks.
 
 ```bash
-pip install ipykernel -r requirements.txt -f $DOWNLOAD_PATH
+pip install ipykernel -r requirements.txt
 
 python -m ipykernel install --user --name object_detection --display-name "(Python) Object Detection"
 ```

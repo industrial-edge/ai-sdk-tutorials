@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Siemens AG
+# Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
 # SPDX-License-Identifier: MIT
 
 import sys
@@ -7,67 +7,54 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from log_module import LogModule
-logger = LogModule()
+try:
+    from log_module import LogModule
+    logger = LogModule()
+except ImportError:
+    # Fallback for local testing without log_module
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(Path('./src').resolve()))
 import vision_classifier as classifier
+from imageset import ImageSet, ImageFormat
 
-IMAGE_WIDTH = 224
-IMAGE_HEIGHT = 224
-IMAGE_SIZE = (IMAGE_WIDTH, IMAGE_HEIGHT)
+IMAGE_WIDTH:  int = 224
+IMAGE_HEIGHT: int = 224
+IMAGE_SIZE: tuple = (IMAGE_WIDTH, IMAGE_HEIGHT)
 
-CLASS_LABELS = ['ET200AL', 'ET200ecoPN', 'ET200sp', 'S7_1200', 'S7_1500']
+CLASS_LABELS: list = ['ET200AL', 'ET200ecoPN', 'ET200sp', 'S7_1200', 'S7_1500']
 
+VISUALIZATION_IS_SET: bool = False
 
-def restore_image_from_bytes(image_bytes, width, height, format):
+def update_parameters(params: dict):
     """
-    Converts image bytes to a numpy array and reshapes it based on the specified format.
+    Update parameters for the image classifier.
 
     Args:
-        image_bytes (bytes): The raw image data in bytes.
-        width (int): The width of the image.
-        height (int): The height of the image.
-        format (str): The format of the image: 'Mono8', 'BayerRG8', 'BayerGR8', 'BayerBG8', 'BayerGB8',
-            'RGB', 'RGB8', 'BGR', 'BGR8', 'YUV422Packed', or 'YUV422_YUYV_Packed'.
-    Returns:
-        np.ndarray: The converted image as a numpy array in RGB format, or None if the format is unsupported.
+        params (dict): Dictionary containing parameters to update.
     """
-
-    restored_image = np.frombuffer(image_bytes, dtype=np.uint8)
-
-    # Reshape the image data based on the height and width
-    match format:
-        case "Mono8" | "BayerRG8" | "BayerGR8" | "BayerBG8" | "BayerGB8":
-            restored_image = restored_image.reshape(height, width)
-        case "RGB" | "RGB8" | "BGR" | "BGR8":
-            restored_image = restored_image.reshape(height, width, 3)
-        case "YUV422Packed" | "YUV422_YUYV_Packed":
-            restored_image = restored_image.reshape(height, width, 2)
-        case _:
-            logger.warning(f"Unsupported image format: {format}")
-            return None
-
-    # Convert the image to RGB format.
-    match format:
-        case "BGR" | "BGR8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_BGR2RGB)
-        case "Mono8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_GRAY2RGB)
-        case "BayerRG8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_BayerRG2RGB)
-        case "BayerGR8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_BayerGR2RGB)
-        case "BayerBG8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_BayerBG2RGB)
-        case "BayerGB8":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_BayerGB2RGB)
-        case "YUV422Packed":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_YUV2RGB_Y422)
-        case "YUV422_YUYV_Packed":
-            restored_image = cv2.cvtColor(restored_image, cv2.COLOR_YUV2RGB_YUYV)
+    global VISUALIZATION_IS_SET
+    VISUALIZATION_IS_SET = params.get("__AI_IS_IMAGE_SET_VISUALIZATION", VISUALIZATION_IS_SET)
     
-    return restored_image
+    logger.info(f"Updated parameters: {VISUALIZATION_IS_SET = }")
+    
+def update_image(imageset: ImageSet, restored_image: np.ndarray, text_to_show: str):
+    """
+    Updates the imageset with the processed image and additional details.
+    Args:
+        imageset (ImageSet): The imageset dictionary to update.
+        restored_image (np.ndarray): The processed image in RGB format.
+        text_to_show (str): The text to overlay on the image.
+    Returns:
+        dict: The updated imageset with the processed image and details."""
+
+    image_with_label = cv2.putText(restored_image.copy(), text_to_show, (20, 20), cv2.FONT_HERSHEY_SIMPLEX, .4, (0, 0, 0), 2)
+    image_with_label = cv2.putText(image_with_label.copy(), text_to_show, (20, 20), cv2.FONT_HERSHEY_SIMPLEX, .4, (255, 255, 255), 1)
+    imageset.detail[0].update_image(image_with_label, ImageFormat.BGR8)
+
+    return imageset.to_dict()
 
 def process_input(data: dict):
     """
@@ -81,24 +68,25 @@ def process_input(data: dict):
         dict: A dictionary with the key 'prediction' that holds the index of the predicted class as an integer string.
     """
 
-    image_detail = data["vision_payload"]["detail"]
 
-    for image in image_detail:
-        width = image["width"]
-        height = image["height"]
-        image_bytes = image["image"]
-        image_id = image['id']
+    imageset:ImageSet = ImageSet.from_dict(data.get("vision_payload", {}))
+
+    for image_detail in imageset.detail:
         try:
-            restored_image = restore_image_from_bytes(image_bytes, width, height, image["format"])
+            restored_image = image_detail.get_image_rgb()
             restored_image = cv2.resize(restored_image, IMAGE_SIZE)
-            prediction, probability = classifier.predict_from_image(restored_image)
-            logger.debug(f"Predicted class: {prediction} (probability: {probability})")
-            return {
+            prediction, confidence = classifier.predict_from_image(restored_image)
+            logger.debug(f"Predicted class: {prediction} (probability: {confidence})")
+            result = {
                 "prediction": CLASS_LABELS[prediction],
-                "ic_probability": metric_output(probability),
+                "ic_probability": metric_output(confidence),
             }
+            if VISUALIZATION_IS_SET:
+                text_to_show = f"Predicted: {CLASS_LABELS[prediction]} ({confidence:.4f})"
+                result["image_to_show"] = update_image(imageset, restored_image, text_to_show)
+            return result
         except BaseException as e:
-            logger.warning(f"Error decoding image from vision payload. Image ID: '{image_id}' Exception:{e}")
+            logger.warning(f"Error decoding image from vision payload. Image ID: '{image_detail.id}' Exception:{e}")
 
     return None
 

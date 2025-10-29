@@ -25,11 +25,11 @@ The below example creates a component for a pipeline step to be executed on CPU,
 ```python
 from simaticai import deployment
 # defines basic properties of the pipeline step
-component = deployment.PythonComponent(name='classifier', version='1.0.0', python_version='3.11')
+component = deployment.PythonComponent(name='classifier', version='1.0.0', python_version='3.12')
 ```
 
 > Note\
-> AI Inference Server supports two versions of Python (3.10 and 3.11). AI SDK can create components for those two target Python environments.
+> AI Inference Server supports two versions of Python (3.11 and 3.12). AI SDK can create components for those two target Python environments.
 
 ### Defining the entrypoint
 
@@ -80,8 +80,8 @@ See below example
 ```python
 from simaticai import deployment
 # defines the basic properties of the 2 components
-step1 = deployment.PythonComponent(name='step1', version='1.0.0', python_version='3.11')
-step2 = deployment.PythonComponent(name='step2', version='1.0.0', python_version='3.11')
+step1 = deployment.PythonComponent(name='step1', version='1.0.0', python_version='3.12')
+step2 = deployment.PythonComponent(name='step2', version='1.0.0', python_version='3.12')
 
 # defining input and output variables for the preceeding of component (step1)
 step1.add_input(name='input1', _type='Double')
@@ -106,7 +106,7 @@ The following code shows how to define component settings. The created configura
 ```python
 from simaticai import deployment
 # defines basic properties of the pipeline step
-component = deployment.PythonComponent(name='classifier', version='1.0.0', python_version='3.11')
+component = deployment.PythonComponent(name='classifier', version='1.0.0', python_version='3.12')
 
 # defining input variable of component
 component.add_input(name='input_1', _type='Double')
@@ -136,7 +136,7 @@ entrypoint: entrypoint.py
 version: 1.0.0
 runtime:
     type: python
-    version: 3.11
+    version: 3.12
 inputType:
     - name: input_1
     type: Double
@@ -172,7 +172,7 @@ The following script creates an image classification pipeline that consists of a
 ```python
 from simaticai import deployment
 # create pipeline component and define basic properties
-component = deployment.PythonComponent(name='inference', version='1.0.0', python_version='3.11')
+component = deployment.PythonComponent(name='inference', version='1.0.0', python_version='3.12')
 component.add_input('vision_payload', 'String')
 
 # define single input variable
@@ -216,7 +216,7 @@ dataFlowPipeline:
           type: String
         runtime:
 type: python
-    version: '3.11'
+    version: '3.12'
     version: 1.0.0
 pipelineDag:
     - source: Databus.vision_payload

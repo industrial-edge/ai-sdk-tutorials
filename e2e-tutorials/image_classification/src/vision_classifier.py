@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Siemens AG
+# Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
 # SPDX-License-Identifier: MIT
 
 """
@@ -6,10 +6,16 @@ Experimental inference wrapper for standard AI Inference Server that feeds Visio
 """
 
 import numpy as np
-import tflite_runtime.interpreter as tflite
+import ai_edge_litert.interpreter as tflite
 
-from log_module import LogModule
-logger = LogModule()
+try:
+    from log_module import LogModule
+    logger = LogModule()
+except ImportError:
+    # Fallback for environments without the log_module
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
 # Load the TFLite model and allocate tensors.
 interpreter = tflite.Interpreter(model_path="models/classification_mobilnet.tflite")

@@ -13,7 +13,7 @@ You can use your preferred Python environment manager to create the Python envir
 
 ## Create a Python virtual environment and activate it
 
-This method requires a preinstalled Python 3.11 runtime.
+This method requires a preinstalled Python 3.12 runtime.
 
 ```bash
 python -m venv ~/.venv/image_classification
@@ -32,27 +32,26 @@ pip install jupyterlab
 
 ## Environment for a project template
 
-Download the AI SDK distribution package and the Image Classification project template. Choose your Downloads folder in your Windows home directory. Unpack the zip files into `ai_sdk_core` and `image_classification` folders in your home folder of the virtual Linux machine with the following commands.
+Download the Image Classification project template. Choose your Downloads folder in your Windows home directory. Unpack the zip files into the `image_classification` folder in your home folder of the virtual Linux machine with the following command.
 
 ```bash
-unzip "~/Downloads/ai_sdk_core-1.6.0.zip" -d ~/ai_sdk_core
-unzip "~/Downloads/ai_sdk_image_classification-1.7.0.zip" -d ~/image_classification
+unzip "~/Downloads/ai_sdk_image_classification-2.6.0.zip" -d ~/image_classification
 ```
 
-Next, step into the `image_classification` folder and install the ipykernel package along with the project template's dependencies and with AI SDK.
+Next, step into the `image_classification` folder and install the ipykernel package along with the project template's dependencies and with AI SDK. The requirements.txt contains the `simaticai` dependency, which will be downloaded from PyPi.org.
 
 These packages must be installed at the same time for pip's dependency resolution to work correctly.
 
 ```bash
 cd ~/image_classification
-pip install ipykernel -r requirements.txt -f ~/ai_sdk_core
+pip install ipykernel -r requirements.txt
 ```
 
 Please note that by default, `pip` will install the newest available version of required packages that are compatible with the SDK and the project template. If you want to make sure to use the versions that are listed in Readme_OSS, you can apply the appropriate constraint during installation as follows:
 
 ```bash
 cd ~/image_classification
-pip install ipykernel -r requirements.txt -c constraints.txt -f ~/ai_sdk_core
+pip install ipykernel -r requirements.txt -c constraints.txt
 ```
 
 Once the environment is created and activated, you need to register it as an interactive Python kernel so that it becomes available in your notebook editor. This is can be achieved with the following command:

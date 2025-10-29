@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
+# SPDX-FileCopyrightText: 2025 Siemens AG
 #
 # SPDX-License-Identifier: MIT
 
@@ -7,9 +7,9 @@
 # Direct dependencies
 torch==2.7.0+cpu
 torchvision==0.22.0+cpu
-onnx==1.17.0
-onnxruntime==1.17.3
-numpy==1.24.4
+onnx==1.18.0
+onnxruntime==1.22.1
+numpy==2.2.6
 
 # Transitive dependencies
 Jinja2==3.1.6
@@ -25,4 +25,4 @@ packaging==25.0
 protobuf==5.29.4
 sympy==1.14.0
 typing-extensions==4.13.2
-Pillow==11.2.1
+Pillow==11.3.0

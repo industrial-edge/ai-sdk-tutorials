@@ -3,7 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 import numpy
-import cv2
+
+from imageset import ImageSet
 
 try:
     from log_module import LogModule
@@ -13,33 +14,28 @@ except:
     logger = logging.getLogger(__name__)
     logger.setLevel('DEBUG')
 
-COLORS = 1
 WIDTH = 224
 HEIGHT = 224
 
 def process_input(data:dict):
     try:
         payload = {}
-        image_set = data["vision_payload"]
-        
-        image_details = image_set['detail']
+        image_set = ImageSet.from_dict(data.get("vision_payload", {}))
         iuid = None
-        inputs = []
 
-        for image_detail in image_details:
-            payload["iuid"] = image_detail.get('id', 'no-id')
-            width = image_detail.get("width", WIDTH)
-            height = image_detail.get("height", HEIGHT)
+        inputs = []
+        for image_detail in image_set.detail:
+            iuid = image_detail.id
+            width = image_detail.width
+            height = image_detail.height
 
             if width != WIDTH or height != HEIGHT:
-                logger.warn(f"Image {payload['iuid']} was dropped because of wrong size {width} X {height}")
+                logger.warning(f"Image {iuid} was dropped because of wrong size {width} X {height}")
                 return None
-
-            image_data = numpy.frombuffer(image_detail['image'], dtype=numpy.uint8)  # BayerRG8, (height x width, )
-            image_data = image_data.reshape(height, width)                           # BayerRG8, (height, width)
-            image_data = cv2.cvtColor(image_data, cv2.COLOR_BayerRG2RGB)             # RGB, (width, height, 3)
-            image_data = image_data.transpose(2,0,1)                                 # RGB, (3, width, height)
-            image_data = image_data.astype(numpy.float32) / 255.0                    # RGB, (3, width, height)
+            
+            image_data = image_detail.get_image_rgb()              # RGB, (height, width, 3)
+            image_data = image_data.transpose(2,1,0)               # RGB, (3, width, height)
+            image_data = image_data.astype(numpy.float32) / 255.0  # RGB, (3, width, height)
 
             inputs.append(image_data.ravel())
 
@@ -48,11 +44,17 @@ def process_input(data:dict):
 
         if inputs is not None:
             payload["input"] = inputs
+            payload["vision_payload"] = data.get("vision_payload", {})
             if iuid is not None:
                 payload["iuid"] = iuid
             return payload
         else:
             return None
+
     except Exception as e:
         logger.error("exception [process_input]:"+str(e))
         return None
+
+def update_parameters(parameters: dict):
+    # To avoid warning about missing update_parameters implementation
+    pass

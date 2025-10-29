@@ -1,8 +1,5 @@
-<!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
-
-SPDX-License-Identifier: MIT
--->
+<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
 
 # AI SDK State Identifier project template
 
@@ -31,20 +28,18 @@ You can choose your preferred Python environment manager to create the separated
 We show example for `venv`.
 
 ```bash
-# via venv assuming Python 3.11.10 is installed on path {PYTHON_HOME_3.11.10}
-{PYTHON_HOME_3.11.10}/bin/python -m venv {ENV_DIR}/state_identifier
+# via venv assuming Python 3.12 is installed on path {PYTHON_HOME_3.12}
+{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/state_identifier
 {ENV_DIR}/state_identifier/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 ```
 
 Once the environment is created and activated you need to install required packages including AI SDK and ipykernel.
 These packages must be installed at the same time for pip's dependency resolution to work correctly.
 
-> _Note:_ `$DOWNLOAD_PATH` is the _directory path containing simaticai sdk wheel_, which can be set in environment variables or replaced in the command below.
-
 Finally, register an ipykernel for running the notebooks.
 
 ```bash
-pip install ipykernel ipython==8.12.0 -r requirements.txt -f $DOWNLOAD_PATH
+pip install ipykernel -r requirements.txt
 
 python -m ipykernel install --user --name state_identifier --display-name "Python (state_identifier)"
 ```

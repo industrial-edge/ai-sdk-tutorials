@@ -1,8 +1,5 @@
-<!--
-SPDX-FileCopyrightText: 2025 Siemens AG
-
-SPDX-License-Identifier: MIT
--->
+<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
 
 # AI SDK Batch State Identifier example
 
@@ -71,8 +68,8 @@ The following commands show how to set up such an environment.
 # You can choose your preferred Python environment manager to create the separated Python environment.
 # We show example for `venv`.
 
-# via venv assuming Python 3.11.10 is installed on path {PYTHON_HOME_3.11.10}
-{PYTHON_HOME_3.11.10}/bin/python -m venv {ENV_DIR}/state_identifier
+# via venv assuming Python 3.12 is installed on path {PYTHON_HOME_3.12}
+{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/state_identifier
 {ENV_DIR}/state_identifier/Scripts/activate
 
 # Once the environment is created and activated you need to register as an ipykernel.
@@ -80,7 +77,7 @@ pip install ipykernel
 python -m ipykernel install --user --name state_identifier --display-name "Python (state_identifier)"
 
 # Install required packages including AI SDK.
-pip install -r requirements.txt -f <directory path containing simaticai sdk wheel>
+pip install -r requirements.txt
 ```
 
 Once the required packages are installed the notebooks can be explored and executed in Jupyter Lab.

@@ -129,7 +129,7 @@ Please take into account the following limitations:
 
 - The AI SDK allows you to choose a required Python version that is supported by different versions of AI Inference Server.
   Please make sure that you choose a Python version that is supported by the version installed on your target Industrial Edge device.
-  At the time of writing, this is Python version 3.11.
+  At the time of writing, this is Python version 3.12.
 - The required Python packages must be either a precompiled wheel for the target platform, or they can be in a pure Python source distribution format. The AI Inference server does not support compiling packages that contain sources in other languages like Rust or C++.
 - You can add other Python repositories by putting the line `--extra-index-url=my.repo.example.com` into the requirements.txt and adding it to the component.
 - The required Python packages must be either downloadable or must be present on the file system during the building of the edge configuration package. In the latter case they must be added to the component with `component.add_python_packages("path/to/example-1.0.whl")`.

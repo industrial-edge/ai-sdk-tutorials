@@ -1,6 +1,6 @@
 <!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2023
-SPDX-License-Identifier: MIT
+    SPDX-FileCopyrightText: 2025 Siemens AG
+    SPDX-License-Identifier: MIT
 -->
 
 # AI SDK, Tutorials and guides
@@ -11,6 +11,9 @@ The AI Software Development Kit, or AI SDK for short, is a set of Python librari
 
 You can consider AI SDK to be the entry point into Siemens' Industrial AI portfolio.
 AI SDK helps you in a number of steps in a machine learning workflow, like packaging the models and its depenedencies, verifying and testing the package locally, and creating the inference pipeline package to run your model on AI Inference Server.
+
+- Version of AI SDK 2.4.0 and above is available on [pypi.org](https://pypi.org/project/simaticai/) with name _simaticai_.
+- Previous versions can be downloaded from 
 
 ## Tutorials and guides
 
@@ -27,6 +30,11 @@ The End-to-End tutorials cover the following machine learning workflow steps:
 - Generating the inference pipeline for AI@Edge
 
 You can also use these tutorials as a starting point for packaging and testing your own models.
+
+> **Hint**\
+> From version 2.6.0 we discontinue testing the tutorials on other environments than Pyhon 3.12 for Linux type OS.
+> All of represented examples can be tried in other environments, but the best experience only guaranteed the environment above.
+
 
 > **Hint**\
 > If you want to run these end-to-end tutorials, you need to setup your environment with appropriate dependencies. Each tutorial explains how to setup the environment in their README.md file

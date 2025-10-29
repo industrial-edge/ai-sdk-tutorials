@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2025 2025 Siemens AG
+#
+# SPDX-License-Identifier: MIT
+
+ai-edge-litert==1.4.0
+opencv-python-headless==4.12.0.88
+numpy==2.2.6
