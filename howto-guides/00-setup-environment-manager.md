@@ -24,11 +24,11 @@ First you need to add an extra package source to the system.
 sudo add-apt-repository ppa:deadsnakes/ppa
 ```
 
-Then you can install Python 3.8 and the `venv` environment manager. After that, you need to add the Python versions to the alternatives, with version 3.8 having a higher priority.
+Then you can install Python 3.12 and the `venv` environment manager. After that, you need to add the Python versions to the alternatives, with version 3.12 having a higher priority.
 
 ```bash
-sudo apt install python3.10 python3.10-venv
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+sudo apt install python3.12 python3.12-venv
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
 ```
 
 If you want to switch to an alternative version later, you can change the configuration with
@@ -39,4 +39,4 @@ sudo update-alternatives --config python
 
 You can confirm whether the correct version is selected with `python --version`. The output should show:
 
-> Python 3.8.18
+> Python 3.12.10

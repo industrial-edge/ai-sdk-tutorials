@@ -16,4 +16,4 @@ sudo apt upgrade -y
 sudo apt install -y zip python-is-python3
 ```
 
-After the installation, you can check the current Python version with `python --version`. The output should show Python version 3.11.x.
+After the installation, you can check the current Python version with `python --version`. The output should show Python version 3.12.x.

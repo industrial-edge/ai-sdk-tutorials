@@ -1,6 +1,5 @@
-# SPDX-FileCopyrightText: 2025 Siemens AG
+# Copyright (C) Siemens AG 2021. All Rights Reserved. Confidential.
 # SPDX-License-Identifier: MIT
-
 
 import sys
 import json

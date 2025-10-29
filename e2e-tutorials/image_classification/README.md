@@ -1,8 +1,6 @@
-<!--
-SPDX-FileCopyrightText: Copyright (C) Siemens AG 2021. All Rights Reserved.
+<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
 
-SPDX-License-Identifier: MIT
--->
 # AI SDK Image Classification project template
 
 This is a machine learning project intended to create an image classification pipeline running on AI Inference Server.
@@ -29,20 +27,20 @@ You can choose your preferred Python environment manager to create the separated
 We show example for `venv`.
 
 ```bash
-# via venv assuming Python 3.11 is installed on path {PYTHON_HOME_3.11}
-{PYTHON_HOME_3.11}/bin/python -m venv {ENV_DIR}/image_classification
+# via venv assuming Python 3.12 is installed on path {PYTHON_HOME_3.12}
+{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/image_classification
 {ENV_DIR}/image_classification/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 ```
 
 Once the environment is created and activated you need to install required packages including AI SDK and ipykernel.
 These packages must be installed at the same time for pip's dependency resolution to work correctly.
-_Note:_ `$DOWNLOAD_PATH` is the _directory path containing simaticai sdk wheel_, which can be set in environment variables or replaced in the command below.
+
 
 Finally, register an ipykernel for running the notebooks.
 
 ```bash
-pip install ipykernel ipython==8.12.0 -r requirements.txt -f $DOWNLOAD_PATH
+pip install ipykernel -r requirements.txt
 
 python -m ipykernel install --user --name image_classification --display-name "Python (image_classification)"
 ```
@@ -58,12 +56,18 @@ The notebook [10-CreateClassificationModel.ipynb](notebooks/10-CreateClassificat
 
 ### 2. Create an Inference Wrapper
 
-The notebook [20-CreateInferenceWrapper.ipynb](notebooks/20-CreateInferenceWrapper.ipynb) shows you how to create an inference wrapper that serves as an entrypoint to your model.
+The notebook [20-CreateInferenceWrapper.ipynb](notebooks/20-CreateInferenceWrapper.ipynb) shows you how to create an inference wrapper that serves as an entrypoint to your model. \
+The entrypoint implements and the notebook showcases how to:
+- use an ImageSet class to deal with standard payloads from Vision Connector Application (VCA)
+- create ImageSet output for the component to enable image visualization on the user interface of AI Inference Server (AI IS)
 
 ### 3. Package for deployment
 
 Before you can bring the model to the shopfloor, an edge package must be created with all of the content necessary for executing the model on an Industrial Edge device.
 This package can be created with the notebook [30-CreatePipelinePackage.ipynb](notebooks/30-CreatePipelinePackage.ipynb).
+The notebook showcases how to:
+- reveive ImageSet payload from VCA
+- create and export a pipeline package for AI Inference Server
 
 ### 4. Test your packaged pipeline locally in Python
 
