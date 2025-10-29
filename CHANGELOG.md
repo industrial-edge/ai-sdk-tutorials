@@ -23,7 +23,8 @@ All of represented examples can be tried in other environments, but the best exp
 
 New features:
 
-- Segmentation tutorial
+- Disable installing dependencies for a component
+- New YOLO E2E Segmentation tutorial
 - Image classification tutorial is extended with visualization example
 - Object detection tutorial is extended with visualization example
 
