@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-protobuf==5.29.4
-tensorflow==2.19.0
+protobuf==6.32.0
+tensorflow==2.20.0
 opencv_python_headless ==4.9.0.80
 numpy ==2.2.6

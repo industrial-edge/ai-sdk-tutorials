@@ -16,6 +16,21 @@ Known issues:
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
 
+# 2.7.0
+
+New features:
+
+- Pipeline mapping preconfiguration tutorial
+- ImageSet usage is explained in tutorials
+
+Fixed issues:
+
+- Python 3.11.x ≤ 3.11.13 - Multiple Vulnerabilities - 3.11.14
+- Python 3.12.x ≤ 3.12.11 - Multiple Vulnerabilities - 3.12.12
+- pip < 25.2 - Remote Symlink Traversal Vulnerability - 25.2
+- protobuf ≤ 6.31.1 - Remote Path Traversal Vulnerability - 6.32.0
+- protobuf < 6.31.1 - Remote Denial of Service - 6.32.0
+
 # 2.6.0
 
 From this version we discontinue testing the tutorials on other environments than Pyhon 3.12 for Linux type OS.
@@ -23,6 +38,7 @@ All of represented examples can be tried in other environments, but the best exp
 
 New features:
 
+- Segmentation tutorial
 - Disable installing dependencies for a component
 - New YOLO E2E Segmentation tutorial
 - Image classification tutorial is extended with visualization example
