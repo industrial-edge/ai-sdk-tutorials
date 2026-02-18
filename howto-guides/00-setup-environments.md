@@ -35,7 +35,7 @@ pip install jupyterlab
 Download the Image Classification project template. Choose your Downloads folder in your Windows home directory. Unpack the zip files into the `image_classification` folder in your home folder of the virtual Linux machine with the following command.
 
 ```bash
-unzip "~/Downloads/ai_sdk_image_classification-2.6.0.zip" -d ~/image_classification
+unzip "~/Downloads/ai_sdk_image_classification-2.7.0.zip" -d ~/image_classification
 ```
 
 Next, step into the `image_classification` folder and install the ipykernel package along with the project template's dependencies and with AI SDK. The requirements.txt contains the `simaticai` dependency, which will be downloaded from PyPi.org.
