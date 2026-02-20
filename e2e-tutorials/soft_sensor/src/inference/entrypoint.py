@@ -1,4 +1,4 @@
-# Copyright (C) Siemens AG 2024. All Rights Reserved. Confidential.
+# SPDX-FileCopyrightText: Siemens AG 2024.
 # SPDX-License-Identifier: MIT
 
 import joblib
