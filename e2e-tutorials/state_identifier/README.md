@@ -1,4 +1,4 @@
-<!-- Copyright (C) Siemens AG 2021. All Rights Reserved. -->
+<!-- SPDX-FileCopyrightText: Siemens AG 2021. -->
 <!-- SPDX-License-Identifier: MIT -->
 
 # AI SDK State Identifier project template
