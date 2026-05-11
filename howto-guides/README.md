@@ -40,3 +40,4 @@ SPDX-License-Identifier: MIT
 * [How to create delta packages](./21-create-delta-packages.md)
 * [How to configure the GPU Runtime component](./24-configure-gpu-runtime.md)
 * [How to use Azure MLOps](./25-azure-mlops.md)
+* [How to use RIB](./27-use-rib.md)

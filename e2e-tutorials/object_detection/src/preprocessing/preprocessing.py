@@ -37,9 +37,14 @@ def process_input(data:dict):
             image_data = image_data.transpose(2,1,0)               # RGB, (3, width, height)
             image_data = image_data.astype(numpy.float32) / 255.0  # RGB, (3, width, height)
 
-            inputs.append(image_data.ravel())
+            # From AI Inference Server 2.8.0, we don't need to flatten the input tensor into a one-dimensional array.
+            # If you are using an older version, uncomment the line below:
+            # image_data = image_data.ravel()
+            inputs.append(image_data)
 
-        inputs = numpy.array(inputs).ravel()
+        inputs = numpy.array(inputs)
+        # Similarly, if you are using an older version of AIIS, you may need to flatten the entire batch into a one-dimensional array:
+        # inputs = inputs.ravel()
         logger.debug(f"inputs shape and length: {inputs.shape} {len(inputs)}")
 
         if inputs is not None:

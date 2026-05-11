@@ -16,6 +16,34 @@ Known issues:
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
 
+# 2.8.0
+
+Added:
+
+- HowTo-Guide is created on RIB communication protocol usage explaining the new connection type, related cycle time parameter, necessary validations and preconfiguration.
+
+Changed:
+
+- When targeting AI Inference Server 2.8.0 or above, you no longer need to flatten model input tensors in pre-processing. The runtime now forwards and validates dimensional metadata automatically during GPU inference. Our E2E Object Detection Tutorial has been updated accordingly.
+
+Security:
+
+- onnx==1.20.0 - onnx ≤ 1.18.0 - Remote Path Traversal Vulnerability - CVE-2025-51480
+- numpy==2.2.6
+- pip==25.3 - pip ≤ 25.2 - Remote Symlink Traversal Vulnerability - CVE-2025-8869
+- urllib3==2.6.3 - urllib3 1.0.x < 2.6.0 - Multiple Remote Denial of Service Vulnerabilities - GHSA-gm62-xv2j-4w53, GHSA-2xpw-w6gg-jr37
+- fonttools==4.61.1
+- keras==3.13.0
+- werkzeug==3.1.5
+- filelock==3.20.3
+- torch==2.9.1+cpu
+- torchvision==0.24.1+cpu
+- protobuf==6.32.0
+- onnxscript==0.5.7
+- ml_dtypes==0.5.4
+- onnx-ir==0.1.14
+- setuptools==80.9.0
+
 # 2.7.0
 
 New features:
@@ -39,8 +67,6 @@ All of represented examples can be tried in other environments, but the best exp
 New features:
 
 - Segmentation tutorial
-- Disable installing dependencies for a component
-- New YOLO E2E Segmentation tutorial
 - Image classification tutorial is extended with visualization example
 - Object detection tutorial is extended with visualization example
 
