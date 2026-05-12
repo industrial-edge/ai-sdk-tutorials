@@ -2,8 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+
 # Direct dependencies
-simaticai==2.7.0
+simaticai==2.8.0
 matplotlib==3.10.3
 numpy==2.2.6
 opencv-python-headless==4.12.0.88
@@ -23,11 +26,11 @@ jsonschema==4.24.0
 jsonschema-specifications==2025.4.1
 markuppy==1.18
 mpmath==1.3.0
-onnx==1.18.0
+onnx==1.20.0
 onnxruntime==1.22.1
 packaging==25.0
 parsley==1.3
-pip==25.2
+pip==25.3
 protobuf==6.32.0
 pyyaml==6.0.2
 referencing==0.36.2
@@ -37,15 +40,15 @@ setuptools==80.9.0
 sympy==1.14.0
 tomli==2.2.1
 typing-extensions==4.14.1
-urllib3==2.5.0
+urllib3==2.6.3
 wheel==0.45.1
 zipp==3.23.0
 
 # Transitive dependencies from ultralytics
 contourpy==1.3.3
 cycler==0.12.1
-filelock==3.19.1
-fonttools==4.59.1
+filelock==3.20.3
+fonttools==4.61.1
 fsspec==2025.7.0
 jinja2==3.1.6
 kiwisolver==1.4.9
@@ -61,8 +64,8 @@ python-dateutil==2.9.0.post0
 pytz==2025.2
 scipy==1.16.1
 six==1.17.0
-torch@https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.7.1%2Bcpu.cxx11.abi-cp312-cp312-linux_x86_64.whl#sha256=d06d422ac9bf250bbfc9b96921fc79354cc89f5ce6e5f98446fc4e90a66a23fb
-torchvision@https://download.pytorch.org/whl/cpu/torchvision-0.22.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=b5fa7044bd82c6358e8229351c98070cf3a7bf4a6e89ea46352ae6c65745ef94
+torch==2.9.1+cpu
+torchvision==0.24.1+cpu
 tqdm==4.67.1
 tzdata==2025.2
 ultralytics-thop==2.0.15

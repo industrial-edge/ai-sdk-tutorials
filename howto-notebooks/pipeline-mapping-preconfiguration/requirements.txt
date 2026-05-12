@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 # Direct dependencies
-simaticai==2.7.0
+simaticai==2.8.0
 
 # Transitive dependencies from simaticai
 attrs==25.3.0
@@ -19,12 +19,12 @@ jsonschema-specifications==2025.4.1
 markuppy==1.18
 mpmath==1.3.0
 numpy==2.2.6
-onnx==1.18.0
+onnx==1.20.0
 onnxruntime==1.22.1
 opencv-python-headless==4.12.0.88
 packaging==25.0
 parsley==1.3
-pip==25.2
+pip==25.3
 platformdirs==4.5.0
 protobuf==6.32.0
 pyyaml==6.0.2
@@ -35,6 +35,6 @@ setuptools==80.9.0
 sympy==1.14.0
 tomli==2.2.1
 typing-extensions==4.14.1
-urllib3==2.5.0
+urllib3==2.6.3
 wheel==0.45.1
 zipp==3.23.0
