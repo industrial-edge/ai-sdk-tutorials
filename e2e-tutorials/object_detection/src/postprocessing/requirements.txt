@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 # Runtime dependencies
-Pillow==11.3.0
+Pillow==12.2.0
 urllib3==2.6.3
-numpy==2.2.6
-opencv-python-headless==4.11.0.86
+numpy==2.4.4
+opencv-python-headless==4.13.0.92

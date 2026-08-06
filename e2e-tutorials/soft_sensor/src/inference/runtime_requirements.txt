@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 # Dependencies used in entrypoint.py:
-joblib==1.5.1
-numpy==2.2.6
+joblib==1.5.3
+numpy==2.4.4
 pandas==2.3.1
 
 # Model dependencies:

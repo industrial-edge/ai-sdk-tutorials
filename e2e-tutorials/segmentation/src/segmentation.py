@@ -3,8 +3,9 @@
 # SPDX-License-Identifier: MIT
 
 import json
-from ultralytics import YOLO
+from ultralytics import YOLO, __version__ as ultralytics_version
 import cv2
+import torch
 
 from imageset import ImageSet, ImageFormat
 
@@ -22,6 +23,17 @@ except:
 model_name = "yolo11n-seg.pt"
 model = YOLO(model_name)
 
+try:
+    logger.info(f"Ultralytics version: {ultralytics_version}")
+    logger.info(f"PyTorch version: {torch.__version__}")
+    logger.info(f"Built with CUDA: {torch.version.cuda}")
+    if torch.cuda.is_available():
+        device_names = [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]
+        logger.info(f"PyTorch GPU reachable: True. Devices: {device_names}")
+    else:
+        logger.info("PyTorch GPU reachable: False. No GPU devices detected.")
+except Exception as ex:
+    logger.warning(f"PyTorch GPU check failed: {ex}")
 
 def calculate_areas(result):
     areas = []

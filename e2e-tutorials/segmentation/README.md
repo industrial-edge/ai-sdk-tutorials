@@ -18,6 +18,7 @@ The example demonstrates the stages of deploying a YOLO segmentation model to an
 - Explaining the usage of the Ultralytics YOLO segmentation model
 - Creating an inference wrapper (a Python step, and eventually, the pipeline) that uses the model
 - Demonstrating how to prepare the package dependencies, replacing opencv-python with its headless version
+- Showing how the pipeline can utilize GPU acceleration on AI Inference Server that supports GPU (version 2.9.0 and above).
 - Packaging the model into a Pipeline Package
 - Testing the package in local Python environment
 
@@ -37,8 +38,8 @@ We show example for `venv`.
 
 ```bash
 # via venv assuming Python 3.12 is installed on path {PYTHON_HOME_3.12}
-{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/object_detection
-{ENV_DIR}/object_detection/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
+{PYTHON_HOME_3.12}/bin/python -m venv {ENV_DIR}/segmentation
+{ENV_DIR}/segmentation/bin/activate  # on Windows, 'activate.bat' can be found in folder 'Scripts' instead of 'bin'
 
 ```
 
@@ -64,7 +65,7 @@ The notebook [10-UltralyticsYoloModel](./notebooks/10-UltralyticsYoloModel.ipynb
 
 ### 2. Create an Inference Wrapper
 
-The notebook [20-CreateInferenceWrapper.ipynb](./notebooks/20-CreateInferenceWrapper.ipynb) shows you how to create an inference wrapper that serves as an entrypoint to the model. It also shows how you can swap the opencv-python package to opencv-python-headless, so that an AI Inference Server can use the Ultralytics package with no issue.
+The notebook [20-CreateInferenceWrapper.ipynb](./notebooks/20-CreateInferenceWrapper.ipynb) shows you how to create an inference wrapper that serves as an entrypoint to the model. It also shows how you can swap the opencv-python package to opencv-python-headless, so that an AI Inference Server can use the Ultralytics package with no issue. It also shows how to utilize the GPU if available.
 
 ### 3. Package for deployment
 
@@ -95,10 +96,12 @@ The directory structure is based on [Cookiecutter Data Science](https://drivenda
 │
 ├── src                   <- Source code for use in this project.
 │   │
-│   ├── requirements.txt  <- The list of required Python packages for the pipeline.
+│   ├── requirements-cpu.txt  <- The list of required Python packages for the pipeline for CPU usage.
+│   ├── requirements-gpu.txt  <- The list of required Python packages for the pipeline for GPU usage.
 │   └── segmentation.py   <- The entrypoint for the inference wrapper.
 │
 ├── test                  <- This is where the local pipeline runner creates the local test environment.
 │
-└── requirements.txt      <- The list of required Python packages to execute the notebooks.
+├── requirements.txt      <- The list of required Python packages to execute the notebooks.
+└── requirements-gpu.txt  <- The list of required Python packages to execute the notebooks with GPU access.
 ```

@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2025 2025 Siemens AG
+#
+# SPDX-License-Identifier: MIT
+
+protobuf==7.34.1
+tensorflow[and-cuda]==2.21.0
+opencv_python_headless==4.9.0.80
+numpy==1.26.4
