@@ -12,6 +12,8 @@ The example demonstrates the three stages of deploying a model to AI Inference S
 - Packaging the model into an Edge Configuration Package
 - Testing the Edge Configuration Package in local Python environment
 
+There are also additional examples that shows how you can create a pipeline that utilizes GPU in AI Inference Server, as well as how you can test it locally if you have GPU access on your machine.
+
 _Hint: This readme is available both as HTML and Markdown. The HTML version you can use with any browser, even if you have no software with Markdown rendering capabilities installed. We recommend using the Markdown version if you have a notebook editor, as most of these let you navigate the links to the notebooks of the template directly._
 
 # Setup environment for running the notebooks
@@ -40,7 +42,7 @@ These packages must be installed at the same time for pip's dependency resolutio
 Finally, register an ipykernel for running the notebooks.
 
 ```bash
-pip install ipykernel -r requirements.txt
+pip install ipykernel -r requirements.txt  # use requirements_cuda.txt if you have GPU acceleration and want to use it in the relevant notebooks.
 
 python -m ipykernel install --user --name image_classification --display-name "Python (image_classification)"
 ```
@@ -58,20 +60,22 @@ The notebook [10-CreateClassificationModel.ipynb](notebooks/10-CreateClassificat
 
 The notebook [20-CreateInferenceWrapper.ipynb](notebooks/20-CreateInferenceWrapper.ipynb) shows you how to create an inference wrapper that serves as an entrypoint to your model. \
 The entrypoint implements and the notebook showcases how to:
+
 - use an ImageSet class to deal with standard payloads from Vision Connector Application (VCA)
 - create ImageSet output for the component to enable image visualization on the user interface of AI Inference Server (AI IS)
 
 ### 3. Package for deployment
 
 Before you can bring the model to the shopfloor, an edge package must be created with all of the content necessary for executing the model on an Industrial Edge device.
-This package can be created with the notebook [30-CreatePipelinePackage.ipynb](notebooks/30-CreatePipelinePackage.ipynb).
+This package can be created with the notebook [30-CreatePipelinePackage.ipynb](notebooks/30-CreatePipelinePackage.ipynb), or [31-CreatePipelinePackageWithGPU](notebooks/31-CreatePipelinePackageWithGPU.ipynb) if you want to build a package that can utilize GPU.
 The notebook showcases how to:
-- reveive ImageSet payload from VCA
+
+- receive ImageSet payload from VCA
 - create and export a pipeline package for AI Inference Server
 
 ### 4. Test your packaged pipeline locally in Python
 
-Test the created edge config package in a local simulated runtime environment to eliminate as many problems as possible without leaving your Python development environment. This is shown in [40-TestPipelineLocally.ipynb](notebooks/40-TestPipelineLocally.ipynb).
+Test the created edge config package in a local simulated runtime environment to eliminate as many problems as possible without leaving your Python development environment. This is shown in [40-TestPipelineLocally.ipynb](notebooks/40-TestPipelineLocally.ipynb). Use [41-TestPipelineLocallyWithGPU](notebooks/41-TestPipelineLocallyWithGPU.ipynb) if you want to test the package created with GPU access in [31-CreatePipelinePackageWithGPU](notebooks/31-CreatePipelinePackageWithGPU.ipynb).
 
 ### 5. Test your packaged pipeline on an Industrial Edge device
 
@@ -82,31 +86,27 @@ The how-to guide [22-test-on-edge-device](../../howto-guides/22-test-on-edge-dev
 The directory structure is based on [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/).
 
 ```text
-├── README.md          <- The top-level README for developers using this project.
+├── README.md                         <- This guide for running the image classification example.
+├── entrypoint.py                     <- CPU/TFLite entrypoint used by 30-CreatePipelinePackage.ipynb.
+├── entrypoint_tf.py                  <- GPU/TensorFlow entrypoint used by 31-CreatePipelinePackageWithGPU.ipynb.
+├── requirements.txt                  <- Python dependencies for the standard notebook flow.
+├── requirements_cuda.txt             <- Additional dependencies for the GPU-enabled notebook flow.
+├── runtime_requirements.txt          <- Runtime dependencies bundled into the standard deployment package.
+├── runtime_requirements_cuda.txt     <- Runtime dependencies bundled into the GPU deployment package.
 ├── data
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default Sphinx project; see sphinx-doc.org for details.
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. The naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description.
-├── packages           <- This is where the edge config package is created.
-│                         The folder also contains the PythonPackages.zip which collects the wheel
-│                         files that are officially not available in the proper format to deploy
-│
-├── reports            <- Analysis generated as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Graphics and figures generated for use in `reports`.
-│
-├── src                <- Source code for use in this project.
-│
-├── test               <- This is where the local pipeline runner creates the local test environment.
-│
-├── CHANGELOG.md       <- The top-level CHANGELOG for developers using this project.
-├── requirements.txt   <- The list of required Python packages to execute the notebooks.
-├── runtime_requirements.txt   <- The list of required Python packages to include in the deployment package
-│                                        when deploying the model with TensorFlow Lite.
-└── entrypoint.py      <- An entrypoint file to be used in example notebook 30-CreatePipelinePackage.ipynb.
+│   ├── raw/                          <- Input images and other original assets.
+│   └── processed/                    <- Prepared data sets generated for training and testing.
+├── models                            <- Classification models trained by 10-CreateClassificationModel.ipynb.
+├── notebooks
+│   ├── 10-CreateClassificationModel.ipynb
+│   ├── 20-CreateInferenceWrapper.ipynb
+│   ├── 30-CreatePipelinePackage.ipynb
+│   ├── 31-CreatePipelinePackageWithGPU.ipynb
+│   ├── 40-TestPipelineLocally.ipynb
+│   └── 41-TestPipelineLocallyWithGPU.ipynb
+├── packages                          <- Output folder for generated edge packages, checksums, and reports.
+└── src
+    ├── utils.py                      <- Shared utility functions used by the example.
+    ├── vision_classifier.py          <- CPU/TFLite inference wrapper implementation.
+    └── vision_classifier_tf.py       <- GPU/TensorFlow inference wrapper implementation.
 ```

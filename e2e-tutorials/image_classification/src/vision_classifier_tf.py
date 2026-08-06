@@ -7,13 +7,50 @@ Experimental inference wrapper for standard AI Inference Server that feeds Visio
 """
 
 import numpy as np
+import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image as imglib
 
-from log_module import LogModule
-logger = LogModule()
+try:
+    from log_module import LogModule
+    logger = LogModule()
+except ImportError:
+    # Fallback for local testing without log_module
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
-model = keras.models.load_model('models/classification_mobilnet.h5')
+from pathlib import Path
+
+
+def _resolve_model_path() -> Path:
+    file_dir = Path(__file__).resolve().parent
+    # We check two folders on purpose because this script runs in two layouts:
+    # 1) From source code: model is usually in ../models
+    # 2) From packaged AIIS runtime: model can be in ./models
+    candidates = [
+        file_dir / 'models' / 'classification_mobilnet.h5',
+        file_dir / '..' / 'models' / 'classification_mobilnet.h5',
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError(
+        f"classification_mobilnet.h5 not found. Checked: {[str(p.resolve()) for p in candidates]}"
+    )
+
+
+model = keras.models.load_model(_resolve_model_path())
+
+# Log GPU visibility at startup so users can filter AIIS logs for "TensorFlow GPU reachable".
+try:
+    gpu_devices = tf.config.list_physical_devices('GPU')
+    if gpu_devices:
+        logger.info(f"TensorFlow GPU reachable: True. Devices: {[gpu.name for gpu in gpu_devices]}")
+    else:
+        logger.info("TensorFlow GPU reachable: False. No GPU devices detected.")
+except Exception as ex:
+    logger.warning(f"TensorFlow GPU check failed: {ex}")
 
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224

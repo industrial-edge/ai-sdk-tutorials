@@ -16,6 +16,25 @@ Known issues:
 - As no TensorFlow Lite 2.7.0 installer was published for Windows systems, you cannot use the local pipeline runner on Windows to execute the TensorFlow Lite based pipeline packages, like the one provided in the Image Classification project template.
 - Rust Crate: flatbuffers ≤ 2.0.0 - Remote Denial of Service Vulnerability - RUSTSEC-2021-0122
 
+# 2.9.0
+
+Added:
+
+- Image classification tutorial is extended with GPU support.
+- Segmentation tutorial is extended with GPU support.
+
+Security upgrades:
+
+- Pygments ≤ 2.19.2 - Local Denial of Service Vulnerability - GHSA-5239-wwwm-4pmq - 2.20.0
+- onnx < 1.21.0 - Remote Path Traversal Vulnerability - GHSA-3r9x-f23j-gc73 - 1.21.0
+- onnx ≤ 1.20.1 - Remote Security Bypass Vulnerability - GHSA-hqmj-h5c6-369m - 1.21.0
+- Werkzeug < 3.1.6 - Remote Denial of Service Vulnerability - GHSA-29vq-49wr-vm6x - 3.1.8
+- keras 3.0.x ≤ 3.13.2 - Remote File Read Vulnerability - CVE-2026-1669 - 3.14.0
+- keras 3.x ≤ 3.13.0 - Remote Denial of Service Vulnerability - CVE-2026-0897 - 3.14.0
+- pillow 10.3.0 < 12.1.1 - Remote Code Execution Vulnerability - GHSA-cfh3-3jmp-rvhc - 12.2.0
+- protobuf < 6.33.5 - Remote Denial of Service Vulnerability - GHSA-7gcm-g887-7qv7 - 7.34.1
+- wheel < 0.46.2 - Local Arbitrary Code Execution Vulnerability - GHSA-8rrh-rw8j-w5fx - 0.46.3
+
 # 2.8.0
 
 Added:
